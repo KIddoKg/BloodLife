@@ -8,34 +8,34 @@ let router = express.Router();
 const initHomepage = (app) => {
   // Get page
   router.get("/", auth.isAuth, homeController.getHomepage);
-  router.get("/nutri", auth.isAuth, homeController.Nutripage);
 
-  //------------ Login Route ------------// ---
+  // Login Route
   router.get("/login", auth.isAuth, homeController.ShowLogin);
 
-  //------------ Forgot Password Route ------------// ---
+  // Forgot Password Route
   router.get("/forgotPass", homeController.getForgot);
 
-  //------------ Reset Password Route ------------//
+  // Reset Password Route
   router.get(`/resetPass/:id`, homeController.getReset);
 
-  //------------ Register Route ------------// ---
+  // Register Route
   router.get("/signup", auth.isAuth, homeController.Signup);
 
-  //------------ Register POST Handle ------------// ---
+  // Register POST Handle
   router.post("/signup", homeController.Register);
 
-  //------------ Email ACTIVATE Handle ------------// ---
+  // Email ACTIVATE Handle
   router.get("/activate/:token", homeController.activateHandle);
 
-  //------------ Forgot Password Handle ------------// ---
+  // Forgot Password Handle
   router.post("/forgotPass", homeController.forgotPassword);
 
-  //------------ Reset Password Handle ------------//
+  // Reset Password Handle
   router.post(`/resetPass/:id`, homeController.resetPassword);
 
-  //------------ Reset Password Handle ------------// ---
+  // Reset Password Handle
   router.get("/forgotPass/:token", homeController.gotoReset);
+
   // Post login donor
   router.post("/login", homeController.Login);
 

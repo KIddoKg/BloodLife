@@ -154,14 +154,7 @@ let Updatepagefill = (req, res) => {
   });
 };
 let Updatepage = (req, res) => {
-  var username = req.body.username;
-  var ssn = req.body.ssn;
-  var gender = req.body.gender;
-
-  var birthday = req.body.dob;
-  var phone = req.body.phone;
-  var email = req.body.email;
-  var addr = req.body.addr;
+  var { username, ssn, gender, birthday, phone, email, addr } = req.body;
 
   var iddonorup = "D0001";
 
