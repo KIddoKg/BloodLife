@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Title Page -->
+    <title>Ordering</title>
+
+    <!-- Font special for pages -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
+      rel="stylesheet"
+    />
+
+    <!-- Ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Checked icon -->
+    <link rel="stylesheet" href="../iconic/fonts/order_fonts/style.css" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../css/order.css" />
+  </head>
+  <body>
+    <div class="page-wrapper p-t-95">
+      <div class="welcome m-b-100">
+        <h1>Welcome to <span>BloodLife</span>, <%= hospitalName %>!</h1>
+        <% if (message.length > 0) { %>
+        <h2 class="mess"><%= message %></h2>
+        <% } %>
+      </div>
+
+      <!-- Searching Bar -->
+      <div class="wrapper wrapper--w1070">
+        <div class="card card-7">
+          <div class="card-body">
+            <form
+              class="form"
+              method="get"
+              action="/hospital/ordering"
+              id="searchForm"
+            >
+              <!-- Blood Product Type -->
+              <div class="input-group input--large">
+                <label class="label">blood product type</label>
+                <div class="custom-select">
+                  <select
+                    class="input--style-1"
+                    name="producttype"
+                    id="producttype"
+                  >
+                    <option value="Red Blood Cells">Red Blood Cells</option>
+                    <option value="Platelets">Platelets</option>
+                    <option value="Plasma">Plasma</option>
+                    <option value="Whole Blood">Whole Blood</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Blood Type -->
+              <div class="input-group input--large">
+                <label class="label">blood type</label>
+                <div class="custom-select">
+                  <select
+                    class="input--style-1"
+                    name="bloodtype"
+                    id="bloodtype"
+                  >
+                    <option value="A+">A RhD positive (A+)</option>
+                    <option value="A-">A RhD negative (A-)</option>
+                    <option value="B+">B RhD positive (B+)</option>
+                    <option value="B-">B RhD negative (B-)</option>
+                    <option value="O+">O RhD positive (O+)</option>
+                    <option value="O-">O RhD negative (O-)</option>
+                    <option value="AB+">AB RhD positive (AB+)</option>
+                    <option value="AB-">AB RhD negative (AB-)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Volume -->
+              <div class="input-group input--medium">
+                <label class="label">volume</label>
+                <div class="custom-select">
+                  <select class="input--style-1" name="volume" id="volume">
+                    <option value="200">200 mL</option>
+                    <option value="300">300 mL</option>
+                    <option value="350">350 mL</option>
+                    <option value="500">500 mL</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Search Button -->
+              <button type="submit" class="btn-submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Searching Result -->
+      <div class="content">
+        <form class="container" method="post" action="/hospital/ordering">
+          <h2 class="m-b-25">Searching Result</h2>
+
+          <!-- Result Table-->
+          <div class="table-responsive custom-table-responsive">
+            <table class="table custom-table">
+              <!-- Column Title -->
+              <thead>
+                <tr>
+                  <th scope="col" class="radio">
+                    <label class="control control--checkbox">
+                      <input type="checkbox" class="js-check-all" />
+                      <div class="control__indicator"></div>
+                    </label>
+                  </th>
+                  <th scope="col" class="id">Blood Stock ID</th>
+                  <th scope="col" class="product_type">Product Type</th>
+                  <th scope="col" class="blood_type">Blood Group</th>
+                  <th scope="col" class="volume">Volume</th>
+                  <th scope="col" class="collection">Collection Date</th>
+                  <th scope="col" class="expiry">Expiry Date</th>
+                </tr>
+              </thead>
+
+              <!-- Blood stocks -->
+              <% if (orderBlood.length > 0) { %> <% for (var i = 0; i <
+              orderBlood.length; i++) { %>
+              <tbody>
+                <tr scope="row">
+                  <th scope="row">
+                    <label class="control control--checkbox">
+                      <input
+                        type="checkbox"
+                        class="orderedBs"
+                        name="orderedBs"
+                        value="<%= orderBlood[i].bid %>"
+                      />
+                      <div class="control__indicator"></div>
+                    </label>
+                  </th>
+                  <td><%- orderBlood[i].bid %></td>
+                  <td><%- orderBlood[i].product_type %></td>
+                  <td><%- orderBlood[i].blood_type %></td>
+                  <td><%- orderBlood[i].volume %></td>
+                  <td><%- input_date[i] %></td>
+                  <td><%- exp_date[i] %></td>
+                </tr>
+                <tr class="spacer">
+                  <td colspan="100"></td>
+                </tr>
+              </tbody>
+              <% } } %>
+            </table>
+          </div>
+
+          <!-- Order Button -->
+          <button class="btn-submit btn-order" type="submit">Order</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+      // For check-all button of result table
+      $(function () {
+        $(".js-check-all").on("click", function () {
+          if ($(this).prop("checked")) {
+            $('th input[type="checkbox"]').each(function () {
+              $(this).prop("checked", true);
+              $(this).closest("tr").addClass("active");
+            });
+          } else {
+            $('th input[type="checkbox"]').each(function () {
+              $(this).prop("checked", false);
+              $(this).closest("tr").removeClass("active");
+            });
+          }
+        });
+
+        $('th[scope="row"] input[type="checkbox"]').on("click", function () {
+          if ($(this).closest("tr").hasClass("active")) {
+            $(this).closest("tr").removeClass("active");
+          } else {
+            $(this).closest("tr").addClass("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

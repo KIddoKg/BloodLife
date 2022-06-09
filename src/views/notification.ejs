@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>In Short Supply</title>
+
+    <!-- Google font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Kanit:200"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icon -->
+    <link type="text/css" rel="stylesheet" href="../css/icomoon.css" />
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="../css/notification.css" />
+  </head>
+
+  <body>
+    <div id="notfound">
+      <div class="notfound">
+        <div class="notfound-404">
+          <h1>Sorry!</h1>
+        </div>
+        <h2>
+          The stocks of <%= blood_type %> blood at our blood bank are not
+          expected to be sufficient to supply your hospital.
+        </h2>
+        <p>
+          If <%= blood_type %> blood are in high demand to your hospital, please
+          <a href="/hospital/contactus" class="contact">contact us!</a>
+          <br />
+          <a href="/hospital">Return to homepage</a>
+        </p>
+        <div class="notfound-social">
+          <a href="#"><i class="icon-facebook"></i></a>
+          <a href="#"><i class="icon-twitter"></i></a>
+          <a href="#"><i class="icon-pinterest"></i></a>
+          <a href="#"><i class="icon-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

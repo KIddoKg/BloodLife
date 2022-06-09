@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Title -->
+    <title>Ordering History</title>
+
+    <!-- Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!-- Style -->
+    <link rel="stylesheet" href="../css/order_history.css" />
+  </head>
+  <body>
+    <div class="content">
+      <div class="container">
+        <h1 class="mb-5">Your Ordering History</h1>
+
+        <div class="table-responsive custom-table-responsive">
+          <table class="table custom-table">
+            <thead>
+              <tr>
+                <th scope="col">Blood Stock ID</th>
+                <th scope="col">Order Date</th>
+                <th scope="col">Product Type</th>
+                <th scope="col">Blood Group</th>
+                <th scope="col">Volume</th>
+                <th scope="col">Collection Date</th>
+                <th scope="col">Expiry Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row 1 -->
+              <% if (orderBlood.length > 0) { %> <% for (var i = 0; i <
+              orderBlood.length; i++) { %>
+              <tr scope="row">
+                <td><%- orderBlood[i].bid %></td>
+                <td><%- order_date[i] %></td>
+                <td><%- orderBlood[i].product_type %></td>
+                <td><%- orderBlood[i].blood_type %></td>
+                <td><%- orderBlood[i].volume %></td>
+                <td><%- input_date[i] %></td>
+                <td><%- exp_date[i] %></td>
+              </tr>
+              <tr class="spacer">
+                <td colspan="100"></td>
+              </tr>
+              <% } } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  </body>
+</html>
