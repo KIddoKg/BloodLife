@@ -27,6 +27,7 @@ const homeRoute = require("./routes/home");
 const donorRoute = require("./routes/donor");
 const hospitalRoute = require("./routes/hospital");
 const staffRoute = require("./routes/staff");
+const campaignRoute = require("./routes/campaign");
 
 // app.use(expressLayouts);
 
@@ -62,6 +63,7 @@ homeRoute(app);
 donorRoute(app);
 hospitalRoute(app);
 staffRoute(app);
+campaignRoute(app);
 
 const port = process.env.PORT;
 app.listen(port, () => {

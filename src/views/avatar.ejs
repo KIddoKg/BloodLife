@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- <link rel="stylesheet" href="./css/style.css" /> -->
+    <link rel="stylesheet" href="/css/person.css" />
+    <link rel="stylesheet" href="/css/styleall.css" />
+    <link rel="stylesheet" href="/css/avatar.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--Add this-->
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
+      rel="stylesheet"
+    />
+    <!--Add this-->
+
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link
+      href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <!--Add this-->
+
+    <title>Bloodlife</title>
+  </head>
+  <body>
+    <div class="navigation">
+      <input type="checkbox" class="navigation__checkbox" id="navi-toggle" />
+      <label for="navi-toggle" class="navigation__button">
+        <span class="navigation__icon">&nbsp;</span>
+      </label>
+      <div class="navigation__background">&nbsp;</div>
+      <div class="navigation__nav">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">About us</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Blood bank</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Nutrition</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Testimonials</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Enroll form</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Person</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-content">
+      <div
+        class="header pb-8 pt-5 pt-lg-8 align-items-center"
+        style="
+          min-height: 900px;
+          background-image: url(/img/header-bg.jpg);
+          background-size: cover;
+          background-position: center top;
+        "
+      >
+        <!-- Mask -->
+        <span class="mask bg-gradient-default opacity-8"></span>
+
+        <div class="content">
+          <div class="container">
+            <div class="row align-items-stretch no-gutters contact-wrap">
+              <div class="col-md-12">
+                <div class="form h-100">
+                  <div class="wrapper">
+                    <div class="title-text">
+                      <div class="title person">Avatar User</div>
+                    </div>
+                    <div id="requestavatar"></div>
+                    <div class="form-container">
+                      <div class="form-inner">
+                        <form
+                          action=""
+                          method=""
+                          onsubmit="return avatarUser()"
+                          id="avatarUser"
+                        >
+                          <div class="mb-2">
+                            <img
+                              role="presentation"
+                              src="/img/Userpic/profile_user.png"
+                              width="150"
+                              height="150"
+                            />
+                            <input
+                              type="radio"
+                              id="img"
+                              name="img"
+                              value=""
+                              checked
+                            />
+                            <img
+                              role="presentation"
+                              src="/img/Userpic/profile_userimg1.png"
+                              width="150"
+                              height="150"
+                            />
+                            <input
+                              type="radio"
+                              id="img1"
+                              name="img"
+                              value="img1"
+                            />
+                            <img
+                              role="presentation"
+                              src="/img/Userpic/profile_userimg2.png"
+                              width="150"
+                              height="150"
+                            />
+                            <input
+                              type="radio"
+                              id="img2"
+                              name="img"
+                              value="img2"
+                            />
+                            <img
+                              role="presentation"
+                              src="/img/Userpic/profile_userimg3.png"
+                              width="150"
+                              height="150"
+                            />
+                            <input
+                              type="radio"
+                              id="img3"
+                              name="img"
+                              value="img3"
+                            />
+                            <img
+                              role="presentation"
+                              src="/img/Userpic/profile_userimg4.png"
+                              width="150"
+                              height="150"
+                            />
+                            <input
+                              type="radio"
+                              id="img4"
+                              name="img"
+                              value="img4"
+                            />
+                            <img
+                              role="presentation"
+                              src="/img/Userpic/profile_userimg5.png"
+                              width="150"
+                              height="150"
+                            />
+                            <input
+                              type="radio"
+                              id="img4"
+                              name="img"
+                              value="img5"
+                            />
+                            <img
+                              role="presentation"
+                              src="/img/Userpic/profile_userimg6.png"
+                              width="150"
+                              height="150"
+                            />
+                            <input
+                              type="radio"
+                              id="img6"
+                              name="img"
+                              value="img6"
+                            />
+                            <img
+                              role="presentation"
+                              src="/img/Userpic/profile_userimg7.png"
+                              width="150"
+                              height="150"
+                            />
+                            <input
+                              type="radio"
+                              id="img7"
+                              name="img"
+                              value="img7"
+                            />
+                            <img
+                              role="presentation"
+                              src="/img/Userpic/profile_userimg8.png"
+                              width="150"
+                              height="150"
+                            />
+                            <input
+                              type="radio"
+                              id="img8"
+                              name="img"
+                              value="img8"
+                            />
+                            <img
+                              role="presentation"
+                              src="/img/Userpic/profile_userimg9.png"
+                              width="150"
+                              height="150"
+                            />
+                            <input
+                              type="radio"
+                              id="img9"
+                              name="img"
+                              value="img9"
+                            />
+                            <img
+                              role="presentation"
+                              src="/img/Userpic/profile_userimg10.png"
+                              width="150"
+                              height="150"
+                            />
+                            <input
+                              type="radio"
+                              id="img10"
+                              name="img"
+                              value="img10"
+                            />
+                            <img
+                              role="presentation"
+                              src="/img/Userpic/profile_userimg11.png"
+                              width="150"
+                              height="150"
+                            />
+                            <input
+                              type="radio"
+                              id="img11"
+                              name="img"
+                              value="img11"
+                            />
+                            <img
+                              role="presentation"
+                              src="/img/Userpic/profile_userimg12.png"
+                              width="150"
+                              height="150"
+                            />
+                            <input
+                              type="radio"
+                              id="img12"
+                              name="img"
+                              value="img12"
+                            />
+                            <img
+                              role="presentation"
+                              src="/img/Userpic/profile_userimg13.png"
+                              width="150"
+                              height="150"
+                            />
+                            <input
+                              type="radio"
+                              id="img13"
+                              name="img"
+                              value="img13"
+                            />
+                            <img
+                              role="presentation"
+                              src="/img/Userpic/profile_userimg14.png"
+                              width="150"
+                              height="150"
+                            />
+                            <input
+                              type="radio"
+                              id="img14"
+                              name="img"
+                              value="img14"
+                            />
+                            <img
+                              role="presentation"
+                              src="/img/Userpic/profile_userimg15.png"
+                              width="150"
+                              height="150"
+                            />
+                            <input
+                              type="radio"
+                              id="img15"
+                              name="img"
+                              value="img15"
+                            />
+                            <img
+                              role="presentation"
+                              src="/img/Userpic/profile_userimg16.png"
+                              width="150"
+                              height="150"
+                            />
+                            <input
+                              type="radio"
+                              id="img16"
+                              name="img"
+                              value="img16"
+                            />
+                            <img
+                              role="presentation"
+                              src="/img/Userpic/profile_userimg17.png"
+                              width="150"
+                              height="150"
+                            />
+                            <input
+                              type="radio"
+                              id="img17"
+                              name="img"
+                              value="img17"
+                            />
+                            <img
+                              role="presentation"
+                              src="/img/Userpic/profile_userimg18.png"
+                              width="150"
+                              height="150"
+                            />
+                            <input
+                              type="radio"
+                              id="img18"
+                              name="img"
+                              value="img18"
+                            />
+                            <img
+                              role="presentation"
+                              src="/img/Userpic/profile_userimg19.png"
+                              width="150"
+                              height="150"
+                            />
+                            <input
+                              type="radio"
+                              id="img19"
+                              name="img"
+                              value="img19"
+                            />
+                            <img
+                              role="presentation"
+                              src="/img/Userpic/profile_userimg20.png"
+                              width="150"
+                              height="150"
+                            />
+                            <input
+                              type="radio"
+                              id="img20"
+                              name="img"
+                              value="img20"
+                            />
+                          </div>
+                          <div class="mb-2">
+                            <button type="submit" class="btn btn-primary">
+                              Choose
+                            </button>
+                          </div>
+                          <p>
+                            <a href="/donor/information">Back your profile</a>
+                          </p>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function avatarUser() {
+      var img = document.forms.avatarUser["img"];
+
+      var req = new XMLHttpRequest();
+
+      req.open("POST", "/donor/information/avatar");
+      req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      req.send("img=" + img.value);
+
+      req.onreadystatechange = function () {
+        if (req.readyState == 4 && req.status == 200) {
+          document.getElementById("requestavatar").innerHTML = req.responseText;
+        }
+      };
+      return false;
+    }
+  </script>
+</html>

@@ -541,7 +541,7 @@ header {
 .navigation__link:hover,
 .navigation__link:active {
   background-position: 100%;
-  background-image: linear-gradient(to right bottom, #EECDA3, #EF629F);
+  background-image: linear-gradient(to right bottom, #ff512f, #f09819);
   transform: translateX(1rem);
 }
 
