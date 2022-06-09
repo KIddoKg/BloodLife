@@ -5,7 +5,6 @@
 }
 
 html {
-  font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -53,6 +52,12 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
+}
+h6 {
+  font-size: 2rem !important;
+}
+.text-secondary {
+  font-size: 2rem !important;
 }
 
 p {
@@ -1288,6 +1293,7 @@ button.bg-white:focus {
 
 .text-white {
   color: rgb(0, 0, 0) !important;
+  font-size: 5rem;
 }
 
 a.text-white:hover,
@@ -1934,7 +1940,7 @@ p {
 }
 
 .heading-small {
-  font-size: 2rem;
+  font-size: 4rem !important;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   letter-spacing: 0.04em;

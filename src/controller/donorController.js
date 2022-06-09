@@ -51,6 +51,7 @@ let Appointment = (req, res) => {
       }
       res.render("./appointment", {
         app: result,
+        layout: "./layouts/authentication",
       });
     });
   });
@@ -157,7 +158,7 @@ let Updatepage = (req, res) => {
   var ssn = req.body.ssn;
   var gender = req.body.gender;
 
-  var dob = req.body.dob;
+  var birthday = req.body.dob;
   var phone = req.body.phone;
   var email = req.body.email;
   var addr = req.body.addr;
