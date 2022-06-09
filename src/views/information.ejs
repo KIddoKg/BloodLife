@@ -131,7 +131,7 @@
               <div class="col-lg-12 col-md-12">
                 <h1 class="display-2 text-white">Hello <%- info[i].name %></h1>
                 <h6 class="text-white mt-0 mb-5">
-                  This is your profile page. You can view your personal information and blood donation history and you can see if your blood has been ordered by the hospital
+                 
                 </h6>
               </div>
             </div>
@@ -284,11 +284,11 @@
                 
                   <ul class="responsive-table"id="ul">
                     <li class="table-header" >
-                      <div class="col col-1">ID</div>
-                      <div class="col col-2">Product Type</div>
-                      <div class="col col-3">Date Donate</div>
-                      <div class="col col-4">Volume</div>
-                      <div class="col col-5">Status</div>
+                      <div class="col col-5">ID</div>
+                      <div class="col col-1">Product Type</div>
+                      <div class="col col-1">Date Donate</div>
+                      <div class="col col-1">Volume</div>
+                      <div class="col col-1">Status</div>
                       <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="return hiden()">
                         <span aria-hidden="true">&times;</span>
                       </button>
@@ -511,7 +511,7 @@
           if (obj.length > 0) {
             for (let i = 0; i < obj.length; i++) {
             
-              ul.innerHTML += " <li class='table-row' id='li'><div class='col col-1' data-label='Job Id'>"+(i+1)+"</div><div class='col col-2' data-label='Customer Name'>"+obj[i]['product_type']+"</div><div class='col col-3' data-label='Amount'>"+obj[i]['input_date']+"</div><div class='col col-4' data-label='Payment Status'>"+obj[i]['volume']+"</div><div class='col col-5' data-label='Payment Status'>"+obj[i]['is_ordered']+"</div></li>";
+              ul.innerHTML += " <li class='table-row' id='li'><div class='col col-5' data-label='Job Id'>"+(i+1)+"</div><div class='col col-1' data-label='Customer Name'>"+obj[i]['product_type']+"</div><div class='col col-1' data-label='Amount'>"+obj[i]['input_date']+"</div><div class='col col-1' data-label='Payment Status'>"+obj[i]['volume']+"</div><div class='col col-1' data-label='Payment Status'>"+obj[i]['is_ordered']+"</div></li>";
             
 
             

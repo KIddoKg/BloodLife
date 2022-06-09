@@ -92,7 +92,9 @@ body {
   text-transform: uppercase;
   margin-bottom: 6rem;
 }
-
+#msg_error {
+  font-size: 2rem;
+}
 .heading-primary--main {
   display: block;
   font-size: 3rem;
@@ -311,8 +313,7 @@ body {
 }
 
 header {
-  background-image: 
-    url("../img/heart-bg.jpg");
+  background-image: url("../img/heart-bg.jpg");
   background-size: cover;
   background-position: top;
   position: relative;
@@ -533,7 +534,7 @@ header {
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
-  
+
   background-size: 252%;
   transition: all 0.4s;
 }
