@@ -1,0 +1,390 @@
+body .credit {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: inherit;
+}
+body .options {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  overflow: hidden;
+  min-width: 600px;
+  max-width: 900px;
+  width: calc(100% - 100px);
+  height: 400px;
+  margin-top: 20rem;
+}
+@media screen and (max-width: 718px) {
+  body .options {
+    min-width: 520px;
+  }
+  body .options .option:nth-child(5) {
+    display: none;
+  }
+}
+@media screen and (max-width: 638px) {
+  body .options {
+    min-width: 440px;
+  }
+  body .options .option:nth-child(4) {
+    display: none;
+  }
+}
+@media screen and (max-width: 558px) {
+  body .options {
+    min-width: 360px;
+  }
+  body .options .option:nth-child(3) {
+    display: none;
+  }
+}
+@media screen and (max-width: 478px) {
+  body .options {
+    min-width: 280px;
+  }
+  body .options .option:nth-child(2) {
+    display: none;
+  }
+}
+body .options .option {
+  position: relative;
+  overflow: hidden;
+  min-width: 60px;
+  margin: 10px;
+  background: var(--optionBackground, var(--defaultBackground, #e6e9ed));
+  background-size: auto 120%;
+  background-position: center;
+  cursor: pointer;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+body .options .option:nth-child(1) {
+  --defaultBackground: #ed5565;
+}
+body .options .option:nth-child(2) {
+  --defaultBackground: #fc6e51;
+}
+body .options .option:nth-child(3) {
+  --defaultBackground: #ffce54;
+}
+body .options .option:nth-child(4) {
+  --defaultBackground: #2ecc71;
+}
+body .options .option:nth-child(5) {
+  --defaultBackground: #5d9cec;
+}
+body .options .option:nth-child(6) {
+  --defaultBackground: #ac92ec;
+}
+body .options .option.active {
+  flex-grow: 10000;
+  transform: scale(1);
+  max-width: 600px;
+  margin: 0px;
+  border-radius: 40px;
+  background-size: auto 100%;
+  /*&:active {
+        transform:scale(0.9);
+   }
+   */
+}
+body .options .option.active .shadow {
+  box-shadow: inset 0 -120px 120px -120px black,
+    inset 0 -120px 120px -100px black;
+}
+body .options .option.active .label {
+  bottom: 20px;
+  left: 20px;
+}
+body .options .option.active .label .info > div {
+  left: 0px;
+  opacity: 1;
+}
+body .options .option:not(.active) {
+  flex-grow: 1;
+  border-radius: 30px;
+}
+body .options .option:not(.active) .shadow {
+  bottom: -40px;
+  box-shadow: inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
+}
+body .options .option:not(.active) .label {
+  bottom: 10px;
+  left: 10px;
+}
+body .options .option:not(.active) .label .info > div {
+  left: 20px;
+  opacity: 0;
+}
+body .options .option .shadow {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 120px;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+body .options .option .label {
+  display: flex;
+  position: absolute;
+  right: 0px;
+  height: 40px;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+body .options .option .label .icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 40px;
+  max-width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: white;
+  color: var(--defaultBackground);
+}
+body .options .option .label .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+  color: white;
+  white-space: pre;
+}
+body .options .option .label .info > div {
+  position: relative;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
+}
+body .options .option .label .info .main {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+body .options .option .label .info .sub {
+  transition-delay: 0.1s;
+}
+/* 
+.section-about{
+    background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/istockphoto-1317285618-170667a.jpg');
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    height:30rem;
+} */
+
+.section-about h3 {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*FAQ*/
+.accordion__panel--text {
+  text-align: left;
+  font-size: 1.2rem;
+  color: white;
+}
+.accordion {
+  font-weight: 800 !important;
+  animation: moveInLeft 1s ease-out;
+  font-size: 1.5rem;
+}
+#imgFAQ {
+  animation: moveInRight 1s ease-out;
+}
+
+/* Định dạng các button mô tả cho nội dung*/
+button.accordion {
+  background-color: transparent;
+  color: #ff512f;
+  cursor: pointer;
+  margin-top: 2px;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+/* Thêm màu nền cho button được active hoặc được hover*/
+button.accordion.active {
+  background-color: transparent;
+  border-style: none;
+  transform: translateY(-5px);
+}
+button.accordion:hover {
+  border: none;
+  transform: translateY(-5px);
+}
+
+/* Thiết lập cho phần nội dung, mặc định sẽ được ẩn đi */
+div.accordion__panel {
+  padding: 0 18px;
+
+  display: none;
+  outline: 0;
+}
+button.accordion.active:focus {
+  outline: none;
+  border: none;
+}
+button.accordion:focus {
+  outline: none;
+}
+/* -------- */
+
+.nutri__title {
+  text-align: center;
+  padding: 5rem;
+  color: #fff;
+}
+
+.icon-list__item {
+  float: left;
+  width: 50%;
+  text-align: center;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+section {
+  margin-top: rem;
+  margin-bottom: 5rem;
+}
+
+.nutri__info {
+  color: #fff;
+}
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+.parallax {
+  /* The image used */
+  background-image: url("../img/nuti.png");
+
+  /* Set a specific height */
+  min-height: 70rem;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.parallax1 {
+  /* The image used */
+  background-image: url("../img/nuti.png");
+
+  /* Set a specific height */
+  min-height: 20rem;
+  position: relative;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax3 {
+  /* The image used */
+  background-image: url("../img/nuti.png");
+
+  /* Set a specific height */
+  min-height: 55rem;
+  position: relative;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+ul.about-details-list {
+  list-style-type: none;
+  margin-bottom: 1rem;
+}
+
+ul.about-details-list li {
+  margin: 2rem 1rem 1rem 3rem;
+  font: 1.5rem "Segoe UI", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.01rem;
+  padding: 0;
+}
+
+ul.about-details-list li:before {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  background: transparent;
+  border: 1px solid #ef3d32;
+  margin: 7px 11px 0 -1.8rem;
+  height: 1rem;
+  position: absolute;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+.before__process p {
+  margin-top: 2.5rem;
+}
+
+.before__process {
+  height: 100%;
+  min-height: 20rem;
+  background-image: url(/img/2.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.process__title {
+  padding: 3rem;
+  font-size: 4rem;
+  font-weight: 600;
+  background-image: linear-gradient(to right, #ff512f, #f09819);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.process__detail {
+  font-size: 2rem;
+}
+
+.after__process p {
+  padding-top: 1rem;
+}
+
+.nutri__FQA {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  padding-top: 5rem;
+}
+
+.img__color--1 {
+  position: absolute;
+  left: -5%;
+}
+
+.img__color--2 {
+  position: absolute;
+  right: 20%;
+  margin-top: -10%;
+}
+
+@media screen and (max-width: 718px) {
+  .img__color--2 {
+    position: absolute;
+    right: 20%;
+    margin-top: 100%;
+  }
+}
