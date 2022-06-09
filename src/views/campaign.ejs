@@ -7,6 +7,8 @@
     <!-- <link rel="stylesheet" href="./css/styleall.css" /> -->
     <link rel="stylesheet" href="../css/person.css" />
     <link rel="stylesheet" href="../css/styleall.css" />
+    <link rel="stylesheet" href="../css/campaign.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -92,9 +94,13 @@
                       src="https://bootdey.com/img/Content/avatar/avatar7.png"
                     />
                   </span>
+                  <% if(event.length > 0){ %>
+                    <% for(var i = 0;i < 1; i++){ %>
                   <div class="media-body ml-2 d-none d-lg-block">
-                    <span class="mb-0 text-sm font-weight-bold">Admin</span>
+                    <span class="mb-0 text-sm font-weight-bold"><%- event[i].bdname %></span>
                   </div>
+                  <% } %>
+                  <% } %>
                 </div>
               </a>
             </li>
@@ -117,9 +123,12 @@
         <div class="container-fluid align-items-center">
           <div class="row">
             <div class="col-lg-7 col-md-10">
-              <h1 class="display-2 text-white">Hello Admin</h1>
-              <br />
-              <br />
+              <% if(event.length > 0){ %>
+                <% for(var i = 0;i < 1; i++){ %>
+              <h1 class="display-2 text-white">Hello <%- event[i].bdname %></h1>
+              <% } %>
+              <% } %>
+              <br>
             </div>
           </div>
         </div>
@@ -143,14 +152,14 @@
                   class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4"
                 >
                   <div class="d-flex justify-content-between">
-                    <a id="btn2" href="#" class="btn btn-sm btn-info mr-4"
-                      >Update user</a
+                    <a id="btn2" href="http://localhost:3000/campaign/event" class="btn btn-sm btn-info mr-4"
+                      >Manager Event</a
                     >
                     <a
                       id="btn4"
                       href="#"
                       class="btn btn-sm btn-default float-right"
-                      >Add blood</a
+                      >Add Event</a
                     >
                   </div>
                 </div>
@@ -163,8 +172,10 @@
                       ></div>
                     </div>
                   </div>
+                  <% if(event.length > 0){ %>
+                    <% for(var i = 0;i < 1; i++){ %>
                   <div class="text-center">
-                    <h3>Admin<span class="font-weight-light"> Cute</span></h3>
+                    <h3><%- event[i].bdname %><span class="font-weight-light"> Cute</span></h3>
                     <div class="h5 mt-4">
                       <i class="ni business_briefcase-24 mr-2"></i>Solution
                       Manager - Creative Tim Officer
@@ -176,6 +187,8 @@
                   <p>Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music.</p>
                   <a href="#">Show more</a> -->
                   </div>
+                  <% } %>  
+                  <% } %>  
                 </div>
               </div>
             </div>
@@ -196,49 +209,22 @@
               </div> -->
 
                   <div class="row align-items-center">
-                    <div class="col" style="text-align: center">
-                      <h1 class="mb-0">Donor Profile</h1>
+                    <div class="col-8">
+                      <h3 class="mb-0">Manager Event</h3>
                     </div>
+                    
                   </div>
+                  <br>
+                  <div id="requestmanager"></div>
                 </div>
                 <div class="card-body">
                   <h6 class="heading-small text-muted mb-4">
-                    User information
+                    Event information
                   </h6>
                   <div class="pl-lg-4">
-                    <form onsubmit="return searching()">
-                      <div class="row">
-                        <div class="col-lg-6">
-                          <div class="form-group focused">
-                            <label
-                              class="form-control-label"
-                              for="input-iddonor"
-                              >ID Donor</label
-                            >
-                            <input
-                              type="search"
-                              id="iddonorsea"
-                              name="iddonorsea"
-                              class="form-control form-control-alternative"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <div class="form-group focused">
-                            <label class="form-control-label"></label>
-                            <br />
-                            <input
-                              type="submit"
-                              class="btn btn-sm btn-primary"
-                              value="Find"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </form>
-                    <hr class="my-4" />
+                 
                     <!-- Address -->
-
+<!-- 
                     <form onsubmit="return update()">
                       <div id="div">
                         <tr id="tr">
@@ -247,7 +233,74 @@
                         <div class="msg"></div>
                       </div>
                       <table></table>
-                    </form>
+                    </form> -->
+                
+                      <!-- <table border="1" width="100%">
+                      <tr>
+                      <th>Name</th>
+                      <th>Open Time</th>
+                      <th> Start</th>
+                      <th> End </th>
+                      <th> addr </th>
+                      <th> number </th>
+                      </tr>
+                      <% if(event.length > 0){ %>
+                        <% for(var i = 0;i < event.length; i++){ %>
+                          <tr>
+                            <td> <%- event[i].cname %></td>
+                            <td> <%- event[i].open_time %></td>
+                            <td> <%- event[i].start_date %></td>
+                            <td> <%- event[i].end_date %></td>
+                            <td> <%- event[i].address %></td>
+                            <td> <%- event[i].pledge_number %></td>
+                          </tr>
+                        <% } %>  
+                      <% }else { %>
+                          <h1> Students Data not found! </h1>
+                      <% } %>
+                    </table> -->
+                    <section class="wrapper">
+                      <!-- Row title -->
+                      <main class="head title">
+                        <ul>
+                      
+                          <li>Name</li>
+                          <li>Open Time</li>
+                          <li> Start Date</li>
+                          <li> End Date </li>
+                          <li> Addres </li>
+                          <li> Action </li>
+                          
+                        </ul>
+                      </main>
+                      <!-- rowa 1 - fadeIn -->
+                      <% if(event.length > 0){ %>
+                        <% for(var i = 0;i < event.length; i++){ %>
+                          <article class="rowa nfl">
+                            <ul>
+                              
+                              <li> <%- event[i].cname %></li>
+                              <li> <%- event[i].open_time %></li>
+                              <li> <%- start_date[i] %></li>
+                              <li> <%- end_date[i] %></li>
+                              <li> <%- event[i].address %></a></li>
+                              <li><a href="#" onclick="deleteevent(this,'<%- event[i].cid %>')">Delete</a></li>
+
+                            </ul>
+                            <ul class="more-content">
+                              <li>
+                                <%- event[i].pledge_number %>
+                              </li>
+                            </ul>
+                          </article>
+                  
+                        <% } %>  
+                      <% }else { %>
+                          <h3 style="text-align: center"> You haven't created an event yet </h3>
+                      <% } %>
+                    
+                 <div id="response"></div>
+                    </section>
                   </div>
                 </div>
               </div>
@@ -256,16 +309,18 @@
               <div class="card bg-secondary shadow">
                 <div class="card-header bg-white border-0">
                   <div class="row align-items-center">
-                    <div class="col" style="text-align: center">
-                      <h1 class="mb-0">Blood Stock</h1>
+                    <div class="col-8">
+                      <h3 class="mb-0">Event</h3>
                     </div>
+
+               
                   </div>
                   <br />
-                  <div id="request"></div>
+                  <div id="requestevent"></div>
                 </div>
                 <div class="card-body">
-                  <form onsubmit="return addBlood()">
-                    <h6 class="heading-small text-muted">Blood information</h6>
+                  <form onsubmit="return addEvent()">
+                    <h6 class="heading-small text-muted">Event information</h6>
 
                     <div class="pl-lg-4">
                       <div class="row">
@@ -273,15 +328,15 @@
                           <div class="form-group focused">
                             <label
                               class="form-control-label"
-                              for="input-iddonor"
-                              >ID Donor</label
+                              for="input-collection"
+                            >
+                              Open Time</label
                             >
                             <input
-                              type="text"
-                              id="iddonorins"
-                              name="iddonorins"
+                              type="time"
                               class="form-control form-control-alternative"
-                              placeholder="iddonor"
+                              name="opentime"
+                              id="opentime"
                             />
                           </div>
                         </div>
@@ -289,21 +344,50 @@
                           <div class="form-group focused">
                             <label
                               class="form-control-label"
-                              for="input-product"
-                              >Product type</label
+                              for="input-eventname"
+                              >Event Name</label
                             >
-                            <select
-                              id="productins"
-                              name="productins"
+                            <input
+                              type="text"
+                              id="eventname"
+                              name="eventname"
                               class="form-control form-control-alternative"
+                            />
+                          </div>
+                        </div>
+ 
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <div class="form-group focused">
+                            <label
+                              class="form-control-label"
+                              for="input-collection"
                             >
-                              <option value="Red Blood Cells">
-                                Red Blood Cells
-                              </option>
-                              <option value="Platelets">Platelets</option>
-                              <option value="Plasma">Plasma</option>
-                              <option value="Whole Blood">Whole Blood</option>
-                            </select>
+                             Start Date</label
+                            >
+                            <input
+                              type="date"
+                              id="startdate"
+                              name="startdate"
+                              class="form-control form-control-alternative"
+                            />
+                          </div>
+                        </div>
+                        
+                        <div class="col-lg-6">
+                          <div class="form-group focused">
+                            <label
+                              class="form-control-label"
+                              for="input-nameevent"
+                              > Pledge Number</label
+                            >
+                            <input
+                              type="text"
+                              id="pledgenumber"
+                              name="pledgenumber"
+                              class="form-control form-control-alternative"
+                            />
                           </div>
                         </div>
                       </div>
@@ -314,86 +398,40 @@
                               class="form-control-label"
                               for="input-collection"
                             >
-                              Collection Date</label
+                             End Date</label
                             >
                             <input
                               type="date"
-                              id="collectionins"
-                              name="collectionins"
+                              id="enddate"
+                              name="enddate"
                               class="form-control form-control-alternative"
                             />
                           </div>
                         </div>
                         <div class="col-lg-6">
-                          <div class="form-group">
-                            <label
-                              class="form-control-label"
-                              for="input-bloodtype"
-                              >Blood type</label
-                            >
-                            <select
-                              id="bloodtypeins"
-                              name="bloodtypeins"
-                              class="form-control form-control-alternative"
-                            >
-                              <option value="A+">A RhD positive (A+)</option>
-                              <option value="A-">A RhD negative (A-)</option>
-                              <option value="B+">B RhD positive (B+)</option>
-                              <option value="B-">B RhD negative (B-)</option>
-                              <option value="O+">O RhD positive (O+)</option>
-                              <option value="O-">O RhD negative (O-)</option>
-                              <option value="AB+">AB RhD positive (AB+)</option>
-                              <option value="AB-">AB RhD negative (AB-)</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-lg-6">
-                          <div class="form-group focused">
-                            <label class="form-control-label" for="input-volume"
-                              >Volume (ml)</label
-                            >
-                            <select
-                              id="volumeins"
-                              name="volumeins"
-                              class="form-control form-control-alternative"
-                            >
-                              <option value="200">200 ml</option>
-                              <option value="300">300 ml</option>
-                              <option value="350">350 ml</option>
-                              <option value="500">500 ml</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-lg-12">
                           <div class="form-group focused">
                             <label
                               class="form-control-label"
-                              for="input-medical"
-                              >Medical Record</label
+                              for="input-nameevent"
+                              > Address</label
                             >
-                            <textarea
+                            <input
                               type="text"
-                              id="medicalins"
+                              id="addrevent"
+                              name="addrevent"
                               class="form-control form-control-alternative"
-                              name="medicalins"
-                            >
-                            </textarea>
+                            />
                           </div>
                         </div>
-                      </div>
-
-                      <!-- Address -->
-
-                      <input
-                        type="submit"
-                        class="btn btn-sm btn-primary"
-                        value="Submit"
-                      />
                     </div>
+
+                    <!-- Address -->
+
+                    <input
+                      type="submit"
+                      class="btn btn-sm btn-primary"
+                      value="Submit"
+                    />
                   </form>
                 </div>
               </div>
@@ -426,18 +464,22 @@
   </script>
 
   <script language="javascript">
+   
+
     document.getElementById("btn2").onclick = function () {
       document.getElementById("content_bank").style.display = "none";
       document.getElementById("content").style.display = "block";
     };
 
+  
     document.getElementById("btn4").onclick = function () {
       document.getElementById("content_bank").style.display = "block";
       document.getElementById("content").style.display = "none";
+      
     };
   </script>
   <!-- req.send("iddonor="+iddonor+"&producttype"+producttype+"&bloddtype="+bloodtype+"&collection="+collection+"&volume="+volume+"&medical="+medical -->
-  <script>
+  <!-- <script>
     function update() {
       var iddonorup = document.getElementById("iddonorup");
       var bloodtypeup = document.getElementById("bloodtypeup");
@@ -470,42 +512,63 @@
       };
       return false;
     }
-  </script>
+  </script> -->
 
   <script language="javascript">
-    function addBlood() {
-      var iddonorins = document.getElementById("iddonorins");
-      var bloodtypeins = document.getElementById("bloodtypeins");
-      var productins = document.getElementById("productins");
-      var collectionins = document.getElementById("collectionins");
-      var volumeins = document.getElementById("volumeins");
-      var medicalins = document.getElementById("medicalins");
+    function deleteevent(obj, cid) {
+        var req = new XMLHttpRequest();
+        req.open("GET", "/campaign/delete-event?cid="+cid, true) ;
+        req.send();
+        
+        req.onreadystatechange = function() {
+          if(req.readyState == 4 && req.status == 200) {
+         
+            document.getElementById("requestmanager").innerHTML = req.responseText;
+            obj.parentElement.parentElement.parentElement.remove ();
+
+          }
+
+    }
+    return false;
+}
+  </script>
+  <script language="javascript">
+    function addEvent() {
+      var eventname = document.getElementById("eventname");
+      var opentime = document.getElementById("opentime");
+      var startdate = document.getElementById("startdate");
+      var enddate = document.getElementById("enddate");
+      var addrevent = document.getElementById("addrevent");
+      var pledgenumber = document.getElementById("pledgenumber");
 
       var req = new XMLHttpRequest();
-      req.open("POST", "/staff/addBlood");
+      req.open("POST", "/campaign/event");
       req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       req.send(
-        "iddonorins=" +
-          iddonorins.value +
-          "&productins=" +
-          productins.value +
-          "&bloodtypeins=" +
-          bloodtypeins.value +
-          "&collectionins=" +
-          collectionins.value +
-          "&volumeins=" +
-          volumeins.value +
-          "&medicalins=" +
-          medicalins.value
+        "eventname=" +
+        eventname.value +
+          "&opentime=" +
+          opentime.value +
+          "&startdate=" +
+          startdate.value +
+          "&enddate=" +
+          enddate.value +
+          "&addrevent=" +
+          addrevent.value +
+          "&pledgenumber=" +
+          pledgenumber.value
       );
 
       req.onreadystatechange = function () {
         if (req.readyState == 4 && req.status == 200) {
-          document.getElementById("request").innerHTML = req.responseText;
+          document.getElementById("requestevent").innerHTML = req.responseText;
 
-          iddonorins.value = "";
-          collectionins.value = "";
-          medicalins.value = "";
+          eventname.value = "";
+          addrevent.value = "";
+          pledgenumber.value = "";
+          startdate.value = ""
+          enddate.value = ""
+          opentime.value = ""
         }
       };
 
@@ -513,80 +576,4 @@
     }
   </script>
 
-  <script>
-    function searching() {
-      document.querySelectorAll("#tr").forEach(function (ele) {
-        ele.remove();
-      });
-      document.querySelectorAll("#row").forEach(function (ele) {
-        ele.remove();
-      });
-      document.querySelectorAll("#msg").forEach(function (ele) {
-        ele.remove();
-      });
-      document.querySelectorAll("#requestup").forEach(function (ele) {
-        ele.remove();
-      });
-      var iddonorsea = document.getElementById("iddonorsea").value;
-
-      var div = document.getElementById("div");
-      var req = new XMLHttpRequest();
-
-      req.open("GET", "/staff/searching?iddonorsea=" + iddonorsea);
-      req.send();
-
-      req.onreadystatechange = function () {
-        if (req.readyState == 4 && req.status == 200) {
-          var obj = JSON.parse(req.responseText);
-
-          if (obj.length > 0) {
-            for (let i = 0; i < obj.length; i++) {
-              div.innerHTML += "<div id='requestup'</div>";
-
-              div.innerHTML +=
-                "<div class='row' id='row'><div class='col-lg-6'><div class='form-group'><label class='form-control-label' for='input-username'>Name</label><input type='text' id='input-username' class='form-control form-control-alternative' disabled value=" +
-                obj[i]["name"] +
-                " ></div></div><div class='col-lg-6'><div class='form-group'><label class='form-control-label' for='input-ssn'>SSN</label><input type='text' id='input-ssn' class='form-control form-control-alternative' value=" +
-                obj[i]["ssn"] +
-                " disabled></div> </div> </div>";
-
-              div.innerHTML +=
-                "<div class='row' id='row'><div class='col-lg-6'><div class='form-group'><label class='form-control-label' for='input-gender'>Gender</label><input type='text' id='input-gender' class='form-control form-control-alternative' disabled value=" +
-                obj[i]["gender"] +
-                " ></div></div><div class='col-lg-6'><div class='form-group'><label class='form-control-label' for='input-dob'>Birdays</label><input type='text' id='input-dob' class='form-control form-control-alternative' value=" +
-                obj[i]["birthday"] +
-                " disabled></div> </div> </div>";
-
-              div.innerHTML +=
-                "<div class='row' id='row'><div class='col-lg-6'><div class='form-group'><label class='form-control-label' for='input-phone'>Phone</label><input type='text' id='input-phone' class='form-control form-control-alternative' disabled value=" +
-                obj[i]["phone"] +
-                " ></div></div><div class='col-lg-6'><div class='form-group'><label class='form-control-label' for='input-email'>Email</label><input type='email' id='input-email' class='form-control form-control-alternative' value=" +
-                obj[i]["email"] +
-                " disabled></div> </div> </div>";
-
-              div.innerHTML +=
-                "<div class='row' id='row'><div class='col-lg-6'><div class='form-group'><label class='form-control-label' for='input-addr'>Address</label><input type='text' id='input-addr' class='form-control form-control-alternative' disabled value=" +
-                obj[i]["address"] +
-                " ></div></div> </div>";
-
-              div.innerHTML +=
-                "<div class='row'id='row'><div class='col-lg-6'><div class='form-group focused'><label class='form-control-label' for='input-bloodtype'>Blood type</label><select id='bloodtypeup' name='bloodtypeup' class='form-control form-control-alternative'><option value='A+'>A RhD positive (A+)</option><option value='A-'>A RhD negative (A-)</option><option value='B+'>B RhD positive (B+)</option><option value='B-'>B RhD negative (B-)</option><option value='O+'>O RhD positive (O+)</option><option value='O-'>O RhD negative (O-)</option><option value='AB+'>AB RhD positive (AB+)</option><option value='AB-'>AB RhD negative (AB-)</option></select></div></div><div class='col-lg-6'><div class='form-group focused'><label class='form-control-label' for='input-donate'>Donate</label><select id='cancelup' name='cancelup' class='form-control form-control-alternative'><option value='1'>Cancel Donate</option><option value='0'>Can Donate</option></select></div></div></div>";
-
-              div.innerHTML +=
-                "<div class='row'id='row'> <div class='col-lg-12'><div class='form-group focused'> <label class='form-control-label' for='input-medical'>Medical Record</label><textarea id='medicalup' class='form-control form-control-alternative' name='medicalup'> </textarea></div></div></div><button type='submit' class='btn btn-sm btn-primary' id='row'>Submit</button>";
-
-              div.innerHTML +=
-                "<input type='hidden' id='iddonorup'value=" +
-                obj[i]["did"] +
-                ">";
-            }
-          } else {
-            div.innerHTML +=
-              "<div id='msg'class='alert alert-warning alert-dismissible ' role='alert'> <strong>No Donor!</strong></div>";
-          }
-        }
-      };
-      return false;
-    }
-  </script>
 </html>

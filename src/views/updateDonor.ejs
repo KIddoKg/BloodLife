@@ -1,97 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/profile.css"/>
-    
-    <link rel="stylesheet" href="../css/styleall.css" />
-    <link rel="stylesheet" href="../css/person.css"/>
->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- <link rel="stylesheet" href="./css/style.css" /> -->
+    <link rel="stylesheet" href="/css/person.css" />
+    <link rel="stylesheet" href="/css/styleall.css" />
+    <link rel="stylesheet" href="/css/appointment.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--Add this-->
 
-</head>
-<body>
-    <div class="card-label">
-        <div class="card-body">
-            <form>
-            <h6 class="heading-small text-muted mb-4">User information</h6>
-            <div class="pl-lg-4">
-                <div class="row">
-                <div class="col-lg-6">
-                    <div class="form-group focused">
-                    <label class="form-control-label" for="input-username">Username</label>
-                    <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" >
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="form-group">
-                    <label class="form-control-label" for="input-email">Email address</label>
-                    <input type="email" id="input-email" class="form-control form-control-alternative" >
-                    </div>
-                </div>
-                </div>
-                <div class="row">
-                <div class="col-lg-6">
-                    <div class="form-group focused">
-                    <label class="form-control-label" for="input-first-name">First name</label>
-                    <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" >
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="form-group focused">
-                    <label class="form-control-label" for="input-last-name">Last name</label>
-                    <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" >
-                    </div>
-                </div>
-                </div>
-            </div>
-            <hr class="my-4">
-            <!-- Address -->
-            <h6 class="heading-small text-muted mb-4">Contact information</h6>
-            <div class="pl-lg-4">
-                <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group focused">
-                    <label class="form-control-label" for="input-address">Address</label>
-                    <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" type="text">
-                    </div>
-                </div>
-                </div>
-                <div class="row">
-                <div class="col-lg-4">
-                    <div class="form-group focused">
-                    <label class="form-control-label" for="input-city">City</label>
-                    <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City" >
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="form-group focused">
-                    <label class="form-control-label" for="input-country">Country</label>
-                    <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="Country" >
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="form-group">
-                    <label class="form-control-label" for="input-country">Postal code</label>
-                    <input type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code">
-                    </div>
-                </div>
-                </div>
-            </div>
-            <hr class="my-4">
-            <!-- Description -->
-            <h6 class="heading-small text-muted mb-4">About me</h6>
-            <div class="pl-lg-4">
-                <div class="form-group focused">
-                <label>About Me</label>
-                <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ..."></textarea>
-                </div>
-            </div>
-            <button class="btn"type="submit">Submit</button>
-            </form>
-        </div>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
+      rel="stylesheet"
+    />
+    <!--Add this-->
+
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <!--Add this-->
+
+    <title>Bloodlife</title>
+  </head>
+  <body>
+    <div class="navigation">
+      <input type="checkbox" class="navigation__checkbox" id="navi-toggle" />
+      <label for="navi-toggle" class="navigation__button">
+        <span class="navigation__icon">&nbsp;</span>
+      </label>
+      <div class="navigation__background">&nbsp;</div>
+      <div class="navigation__nav">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">About us</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Blood bank</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Nutrition</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Testimonials</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Enroll form</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Person</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Login</a>
+          </li>
+        </ul>
+      </div>
     </div>
-</body>
+    <div class="main-content">
+      <div
+        class="header pb-8 pt-5 pt-lg-8 align-items-center"
+        style="
+          min-height: 900px;
+          background-image: url(/img/header-bg.jpg);
+          background-size: cover;
+          background-position: center top;
+        "
+      >
+        <!-- Mask -->
+        <span class="mask bg-gradient-default opacity-8"></span>
+        <% if(fill.length > 0){ %> <% for(var i = 0;i < fill.length; i++){ %>
+        <div class="content">
+          <div class="container">
+            <div class="row align-items-stretch no-gutters contact-wrap">
+              <div class="col-md-6">
+                <div class="form h-200">
+                  <div id="requestdonor"></div>
+                  <form onsubmit="return updateinfo()" method="POST">
+                    <h6 class="heading-small text-muted mb-4">
+                      User information
+                    </h6>
+                    <div class="pl-lg-4">
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <div class="form-group focused">
+                            <label class="col-form-label" for="input-username"
+                              >Username</label
+                            >
+                            <input
+                              type="text"
+                              id="username"
+                              name="username"
+                              class="form-control form-control-alternative"
+                              value="<%- fill[i].name %>"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <label class="col-form-label" for="input-ssn"
+                              >SSN</label
+                            >
+                            <input
+                              type="text"
+                              id="ssn"
+                              name="ssn"
+                              class="form-control form-control-alternative"
+                              value="<%- fill[i].ssn %>"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <div class="form-group focused">
+                            <label
+                              class="col-form-label"
+                              for="input-first-gender"
+                              >Gender</label
+                            >
+                            <input
+                              type="text"
+                              id="gender"
+                              name="gender"
+                              class="form-control form-control-alternative"
+                              value="<%- fill[i].gender %>"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="form-group focused">
+                            <label class="col-form-label" for="input-last-dob"
+                              >Birthdays</label
+                            >
+                            <input
+                              type="date"
+                              id="dob"
+                              class="form-control form-control-alternative"
+                              value="<%- fill[i].dob %>"
+                              name="dob"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <div class="form-group focused">
+                            <label class="col-form-label" for="input-phone"
+                              >Phone</label
+                            >
+                            <input
+                              type="text"
+                              id="phone"
+                              name="phone"
+                              class="form-control form-control-alternative"
+                              value="<%- fill[i].phone %>"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="form-group focused">
+                            <label class="col-form-label" for="input-email"
+                              >Email</label
+                            >
+                            <input
+                              type="email"
+                              id="email"
+                              name="email"
+                              class="form-control form-control-alternative"
+                              value="<%- fill[i].email %>"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <div class="form-group focused">
+                            <label class="col-form-label" for="input-addr"
+                              >Address</label
+                            >
+                            <input
+                              type="text"
+                              id="addr"
+                              name="addr"
+                              class="form-control form-control-alternative"
+                              value="<%- fill[i].address %>"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="row">
+                      <div class="col-md-6 form-group">
+                        <input
+                          type="submit"
+                          class="btn btn-sm btn-primary"
+                          value="Submit"
+                        />
+                      </div>
+                      <div class="col-md-6 form-group text-right">
+                        <a
+                          type="button"
+                          href="/donor/information"
+                          class="btn btn-sm btn-primary"
+                          >BACK</a
+                        >
+                      </div>
+                    </div>
+                    <!-- <button id="btn1">an</button> -->
+                  </form>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div
+                  class="contact-info h-100"
+                  style="background-image: url('/img/event_1.jpg')"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% } %> <% }else { %>
+        <h1>Students Data not found!</h1>
+        <% } %>
+      </div>
+    </div>
+  </body>
+  <script>
+    function updateinfo() {
+      var username = document.getElementById("username");
+      var ssn = document.getElementById("ssn");
+      var gender = document.getElementById("gender");
+      var dob = document.getElementById("dob");
+      var phone = document.getElementById("phone");
+      var email = document.getElementById("email");
+      var addr = document.getElementById("addr");
+
+      var req = new XMLHttpRequest();
+
+      req.open("POST", "/donor/information/update");
+      req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      req.send(
+        "username=" +
+          username.value +
+          "&ssn=" +
+          ssn.value +
+          "&gender=" +
+          gender.value +
+          "&dob=" +
+          dob.value +
+          "&phone=" +
+          phone.value +
+          "&email=" +
+          email.value +
+          "&addr=" +
+          addr.value
+      );
+
+      req.onreadystatechange = function () {
+        if (req.readyState == 4 && req.status == 200) {
+          document.getElementById("requestdonor").innerHTML = req.responseText;
+        }
+      };
+      return false;
+    }
+  </script>
 </html>
