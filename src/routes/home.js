@@ -13,10 +13,10 @@ const initHomepage = (app) => {
   router.get("/login", auth.isAuth, homeController.ShowLogin);
 
   // Forgot Password Route
-  router.get("/forgotPass", homeController.getForgot);
+  router.get("/forgotPass", auth.isAuth, homeController.getForgot);
 
   // Reset Password Route
-  router.get(`/resetPass/:id`, homeController.getReset);
+  router.get(`/resetPass/:id`, auth.isAuth, homeController.getReset);
 
   // Register Route
   router.get("/signup", auth.isAuth, homeController.Signup);
@@ -25,7 +25,7 @@ const initHomepage = (app) => {
   router.post("/signup", homeController.Register);
 
   // Email ACTIVATE Handle
-  router.get("/activate/:token", homeController.activateHandle);
+  router.get("/activate/:token", auth.isAuth, homeController.activateHandle);
 
   // Forgot Password Handle
   router.post("/forgotPass", homeController.forgotPassword);
@@ -34,7 +34,7 @@ const initHomepage = (app) => {
   router.post(`/resetPass/:id`, homeController.resetPassword);
 
   // Reset Password Handle
-  router.get("/forgotPass/:token", homeController.gotoReset);
+  router.get("/forgotPass/:token", auth.isAuth, homeController.gotoReset);
 
   // Post login donor
   router.post("/login", homeController.Login);
