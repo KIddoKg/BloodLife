@@ -7,35 +7,35 @@ const auth = require("../configs/auth");
 let router = express.Router();
 
 const initDonorpage = (app) => {
-  router.get("/", auth.loggedin, donorController.HomepageDonor);
+  router.get("/", auth.loggedIn, donorController.HomepageDonor);
 
-  router.get("/nutri", auth.loggedin, donorController.Nutripage);
+  router.get("/nutri", auth.loggedIn, donorController.Nutripage);
 
-  router.get("/showdonate", auth.loggedin, donorController.Showdonate);
+  router.get("/showdonate", auth.loggedIn, donorController.Showdonate);
 
-  router.get("/appointment", auth.loggedin, donorController.Appointment);
+  router.get("/appointment", auth.loggedIn, donorController.Appointment);
 
   router.post("/appointment", donorController.Appointmentpost);
 
-  router.get("/information", auth.loggedin, donorController.Information);
+  router.get("/information", auth.loggedIn, donorController.Information);
 
   router.post("/information/update", donorController.Updatepage);
 
   router.get(
     "/information/update",
-    auth.loggedin,
+    auth.loggedIn,
     donorController.Updatepagefill
   );
 
   router.get(
     "/information/avatar",
-    auth.loggedin,
+    auth.loggedIn,
     donorController.Updateavatar
   );
 
   router.post("/information/avatar", donorController.Posteavatar);
 
-  router.get("/logout", auth.loggedin, donorController.Logout);
+  router.get("/logout", auth.loggedIn, donorController.Logout);
 
   return app.use("/donor", router);
 };

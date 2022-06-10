@@ -50,65 +50,42 @@ let AddBlood = (req, res) => {
 };
 
 let AddBloodUpdate = (req, res) => {
-  var bloodtypeup = req.body.bloodtypeup;
-  var cancelup = req.body.cancelup;
-  var medicalup = req.body.medicalup;
-
-  var iddonorup = req.body.iddonorup;
+  var { bloodtypeup, cancelup, medicalup, iddonorup } = req.body;
 
   connection.connect(function (error) {
     console.log(error);
+
     var sql =
       "update donor set blood_type = ?, med_cond=?, can_donate= ? where did = ?";
 
-    var values = [[bloodtypeup, medicalup, cancelup, iddonorup]];
+    var values = [bloodtypeup, medicalup, cancelup, iddonorup];
 
-    connection.query(
-      sql,
-      [bloodtypeup, medicalup, cancelup, iddonorup],
-      function (error, result) {
-        console.log(error);
-        if (error) {
-          res.render("./partials/error_msg", {
-            message: "Error Cannot update infomation Donor ",
-            layout: "./layouts/authentication",
-          });
-        } else {
-          // res.send('ok' );
-
-          res.render("./partials/success_msg", {
-            message: "Success Update Donor",
-            layout: "./layouts/authentication",
-          });
-        }
+    connection.query(sql, values, function (error, result) {
+      console.log(error);
+      if (error) {
+        res.render("./partials/error_msg", {
+          message: "Error Cannot update infomation Donor ",
+          layout: "./layouts/authentication",
+        });
+      } else {
+        res.render("./partials/success_msg", {
+          message: "Success Update Donor",
+          layout: "./layouts/authentication",
+        });
       }
-    );
+    });
   });
 };
 
 let AddBloodPost = (req, res) => {
-  // var iddonor = req.body.iddonor;
-  // var bloodtype = req.body.bloodtype;
-  // var producttype = req.body.producttype
-  // var collection =req.body.collection;
-  // var volume = req.body.volume;
-  // var medical = req.body.medical;
-
-  // connection.connect(function(error){
-  //   if(error) throw error;
-  //     var sql = "INSERT INTO bloodstock(did, product_type,blood_type, volume) VALUES (?, ?,?,?)";
-  //   connection.query(sql, [iddonor, producttype, bloodtype , volume], function(error, result){
-  //       if(error) throw error;
-  //       res.send('Student Register successfull');
-  //   });
-  // });
-
-  var iddonorins = req.body.iddonorins;
-  var productins = req.body.productins;
-  var bloodtypeins = req.body.bloodtypeins;
-  var collectionins = req.body.collectionins;
-  var volumeins = req.body.volumeins;
-  var medicalins = req.body.medicalins;
+  var {
+    iddonorins,
+    productins,
+    bloodtypeins,
+    collectionins,
+    volumeins,
+    medicalins,
+  } = req.body;
 
   connection.connect(function (error) {
     console.log(error);
@@ -116,27 +93,26 @@ let AddBloodPost = (req, res) => {
       "insert into bloodstock(did, input_date, product_type, blood_type, volume) values ( (select DISTINCT  d.did from donor d where d.did  = ?),?,?,?,?);";
 
     var values = [
-      [iddonorins, collectionins, productins, bloodtypeins, volumeins],
+      iddonorins,
+      collectionins,
+      productins,
+      bloodtypeins,
+      volumeins,
     ];
-
-    connection.query(
-      sql,
-      [iddonorins, collectionins, productins, bloodtypeins, volumeins],
-      function (error, result) {
-        console.log(error);
-        if (error) {
-          res.render("./partials/error_msg", {
-            message: "Error Cannot insert BloodStock ",
-            layout: "./layouts/authentication",
-          });
-        } else {
-          res.render("./partials/success_msg", {
-            message: "Success BloodStock was added BloodBank ",
-            layout: "./layouts/authentication",
-          });
-        }
+    connection.query(sql, values, function (error, result) {
+      console.log(error);
+      if (error) {
+        res.render("./partials/error_msg", {
+          message: "Error Cannot insert BloodStock ",
+          layout: "./layouts/authentication",
+        });
+      } else {
+        res.render("./partials/success_msg", {
+          message: "Success BloodStock was added BloodBank ",
+          layout: "./layouts/authentication",
+        });
       }
-    );
+    });
   });
   connection.connect(function (error) {
     console.log(error);
@@ -180,6 +156,14 @@ let UpdateDonor = (req, res) => {
   return res.render("./updateDonor");
 };
 
+// Logout handle
+let Logout = (req, res) => {
+  req.session.destroy((err) => {
+    if (err) throw err;
+    res.redirect("/");
+  });
+};
+
 module.exports = {
   getHomepage,
   AddBlood,
@@ -187,4 +171,5 @@ module.exports = {
   AddBloodPost,
   AddBloodSearch,
   AddBloodUpdate,
+  Logout,
 };

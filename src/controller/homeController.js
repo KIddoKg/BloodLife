@@ -472,9 +472,9 @@ let resetPassword = (req, res) => {
 };
 
 let Login = (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, role } = req.body;
   let errors = [];
-  if (!email || !password) {
+  if (!email || !password || !role) {
     errors.push({ msg: "Please fill in all fields" });
   }
   if (errors.length > 0) {
@@ -484,7 +484,10 @@ let Login = (req, res) => {
       email,
       password,
     });
-  } else {
+  }
+
+  // Login Donor
+  else if (role == "Donor") {
     var sql = "select * from Donor Where email = ?";
     connection.query(sql, [email], (err, data, fields) => {
       if (err) throw err;
@@ -499,9 +502,108 @@ let Login = (req, res) => {
       } else {
         bcrypt.compare(password, data[0].password, (err, result) => {
           if (result == true) {
-            req.session.loggedin = true;
+            req.session.loggedIn = true;
             req.session.data = data;
             res.redirect("/donor");
+          } else {
+            errors.push({ msg: "Password incorrect" });
+            return res.render("login.ejs", {
+              layout: "./layouts/authentication.ejs",
+              errors,
+              email,
+              password,
+            });
+          }
+        });
+      }
+    });
+  }
+
+  // Login Hospital
+  else if (role == "Hospital") {
+    var sql = "select * from Hospital Where email = ?";
+    connection.query(sql, [email], (err, data, fields) => {
+      if (err) throw err;
+      if (!data.length) {
+        errors.push({ msg: "That email is not exist!" });
+        res.render("login.ejs", {
+          layout: "./layouts/authentication.ejs",
+          errors,
+          email,
+          password,
+        });
+      } else {
+        bcrypt.compare(password, data[0].password, (err, result) => {
+          if (result == true) {
+            req.session.loggedInHospital = true;
+            req.session.data = data;
+            res.redirect("/hospital");
+          } else {
+            errors.push({ msg: "Password incorrect" });
+            return res.render("login.ejs", {
+              layout: "./layouts/authentication.ejs",
+              errors,
+              email,
+              password,
+            });
+          }
+        });
+      }
+    });
+  }
+
+  // Login Staff
+  else if (role == "Staff") {
+    var sql = "select * from Staff Where username = ?";
+    connection.query(sql, [email], (err, data, fields) => {
+      if (err) throw err;
+      if (!data.length) {
+        errors.push({ msg: "That user is not exist!" });
+        res.render("login.ejs", {
+          layout: "./layouts/authentication.ejs",
+          errors,
+          email,
+          password,
+        });
+      } else {
+        bcrypt.compare(password, data[0].password, (err, result) => {
+          if (result == true) {
+            req.session.loggedInStaff = true;
+            req.session.data = data;
+            res.redirect("/staff");
+          } else {
+            errors.push({ msg: "Password incorrect" });
+            return res.render("login.ejs", {
+              layout: "./layouts/authentication.ejs",
+              errors,
+              email,
+              password,
+            });
+          }
+        });
+      }
+    });
+  }
+
+  // Login Collaborator
+  else if (role == "Collaborator") {
+    var sql = "select * from BloodDriveLeader Where email = ?";
+    connection.query(sql, [email], (err, data, fields) => {
+      if (err) throw err;
+      if (!data.length) {
+        errors.push({ msg: "That user is not exist!" });
+        res.render("login.ejs", {
+          layout: "./layouts/authentication.ejs",
+          errors,
+          email,
+          password,
+        });
+      } else {
+        bcrypt.compare(password, data[0].password, (err, result) => {
+          if (result == true) {
+            req.session.loggedInCollab = true;
+            req.session.data = data;
+            res.redirect("/campaign");
           } else {
             errors.push({ msg: "Password incorrect" });
             return res.render("login.ejs", {

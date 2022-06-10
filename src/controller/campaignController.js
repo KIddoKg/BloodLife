@@ -134,9 +134,18 @@ let deleteevent = (req, res) => {
   });
 };
 
+// Logout handle
+let Logout = (req, res) => {
+  req.session.destroy((err) => {
+    if (err) throw err;
+    res.redirect("/");
+  });
+};
+
 module.exports = {
   event,
   getHomepage,
   Addevent,
   deleteevent,
+  Logout,
 };

@@ -41,7 +41,7 @@ let Nutripage = (req, res) => {
 };
 
 let Appointment = (req, res) => {
-  var iddonorsea = "D0001";
+  // var iddonorsea = req.
   connection.connect(function (error) {
     if (error) console.log(error);
     var sql = "select * from Donor where did = ?";

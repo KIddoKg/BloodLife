@@ -279,6 +279,13 @@ let HistoryOrder = (req, res) => {
   });
 };
 
+let Logout = (req, res) => {
+  req.session.destroy((err) => {
+    if (err) throw err;
+    res.redirect("/");
+  });
+};
+
 module.exports = {
   getHomepage,
   OrderLoading,
@@ -287,4 +294,5 @@ module.exports = {
   Notification,
   SendMessage,
   HistoryOrder,
+  Logout,
 };
