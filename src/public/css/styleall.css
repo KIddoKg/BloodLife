@@ -95,6 +95,10 @@ body {
 #msg_error {
   font-size: 2rem;
 }
+#msg_success {
+  font-size: 2rem;
+}
+
 .heading-primary--main {
   display: block;
   font-size: 3rem;

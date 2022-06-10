@@ -62,7 +62,7 @@ let Information = (req, res) => {
   connection.connect(function (error) {
     if (error) console.log(error);
     var sql =
-      "SELECT * ,SUM(volume) AS total_volume FROM donor d,bloodstock  where d.did LIKE ? ;";
+      "SELECT name, ssn, imgid,gender, birthday, phone, email, address, blood_type, med_cond FROM donor  where did LIKE 'D0001' UNION SELECT bid,did, blood_type, product_type,input_date, SUM(volume) AS TotalItemsOrdered ,exp_date,is_ordered,blood_type,is_discarded from bloodstock  where did LIKE ? ;";
 
     var values = [[iddonorsea]];
 
@@ -71,6 +71,12 @@ let Information = (req, res) => {
         console.log(error);
       }
       const dobDate = [];
+      // const totalVolume = []
+
+      // for (var i = 0; i < result.length; i++) {
+      //   totalVolume[i] = result[i].v;
+      //   result[i].birthday = dobDate[i];
+      // }
 
       for (var i = 0; i < result.length; i++) {
         dobDate[i] = format(result[i].birthday);
@@ -154,18 +160,18 @@ let Updatepagefill = (req, res) => {
   });
 };
 let Updatepage = (req, res) => {
-  var { username, ssn, gender, birthday, phone, email, addr } = req.body;
+  var { username, ssn, gender, birthday, phone, addr } = req.body;
 
   var iddonorup = "D0001";
 
   connection.connect(function (error) {
     console.log(error);
     var sql =
-      "update donor set name = ?, ssn = ?, gender = ?, birthday = ?, phone = ?, email = ?, address = ? where did = ?";
+      "update donor set name = ?, ssn = ?, gender = ?, birthday = ?, phone = ?, address = ? where did = ?";
 
     connection.query(
       sql,
-      [username, ssn, gender, birthday, phone, email, addr, iddonorup],
+      [username, ssn, gender, birthday, phone, addr, iddonorup],
       function (error, result) {
         console.log(result);
         console.log(error);

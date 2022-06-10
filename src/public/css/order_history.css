@@ -41,6 +41,7 @@ h1 {
 .custom-table thead th {
   border-top: none;
   border-bottom: none !important;
+  font-size: 2rem;
 }
 
 .custom-table tbody th,
