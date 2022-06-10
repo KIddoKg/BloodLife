@@ -47,6 +47,7 @@ h1 {
 .custom-table tbody th,
 .custom-table tbody td {
   color: rgb(107, 107, 107);
+  font-size: 16px !important;
   font-weight: 400;
   padding-bottom: 20px;
   padding-top: 20px;

@@ -49,7 +49,8 @@ function format(date) {
 }
 
 let OrderLoading = (req, res) => {
-  var hid = "H0001";
+  // var hid = "H0001";
+  const hid = req.session.data[0].hid;
 
   // Get hospital name to display welcome
   var sqlHname = "select * from Hospital where hid = ?;";
@@ -69,7 +70,8 @@ let OrderLoading = (req, res) => {
 };
 
 let Searching = (req, res) => {
-  var hid = "H0001";
+  // var hid = "H0001";
+  const hid = req.session.data[0].hid;
   var product_type = req.query.producttype;
   var blood_type = req.query.bloodtype;
   var volume = req.query.volume;
@@ -122,7 +124,8 @@ let Searching = (req, res) => {
 };
 
 let Ordering = (req, res) => {
-  var hid = "H0001";
+  // var hid = "H0001";
+  const hid = req.session.data[0].hid;
   var order_date = new Date();
 
   // Get hospital name to display welcome
@@ -197,7 +200,8 @@ let Ordering = (req, res) => {
 };
 
 let Notification = (req, res) => {
-  var hid = "H0001";
+  // var hid = "H0001";
+  const hid = req.session.data[0].hid;
 
   // Get hospital name and address to display welcome
   var sqlHospital = "select * from Hospital where hid = ?;";
@@ -216,9 +220,9 @@ let Notification = (req, res) => {
 };
 
 let SendMessage = (req, res) => {
-  var hid = "H0001";
-  var subject = req.body.subject;
-  var message = req.body.message;
+  // var hid = "H0001";
+  const hid = req.session.data[0].hid;
+  const { subject, message } = req.body;
 
   // Get hospital name and address to display welcome
   var sqlHospital = "select * from Hospital where hid = ?;";
@@ -249,7 +253,8 @@ let SendMessage = (req, res) => {
 };
 
 let HistoryOrder = (req, res) => {
-  var hid = "H0001";
+  // var hid = "H0001";
+  const hid = req.session.data[0].hid;
 
   var sqlOrderHistory =
     "select B.bid, O.order_date, B.product_type, B.blood_type, B.volume, B.input_date, B.exp_date from BloodStock B, Ordering O where O.hid = ? and O.bid = B.bid order by O.order_date asc;";

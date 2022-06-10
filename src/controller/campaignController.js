@@ -37,12 +37,13 @@ function format(date) {
 }
 
 let event = (req, res) => {
+  const bdid = req.session.data[0].bdid;
   connection.connect(function (error) {
     if (error) console.log(error);
     var sql =
-      "select DISTINCT * from campaign c,BloodDriveLeader b where c.bdid=b.bdid and c.bdid = 'BD001';";
+      "select DISTINCT * from campaign c,BloodDriveLeader b where c.bdid=b.bdid and c.bdid = ?;";
 
-    connection.query(sql, function (error, result) {
+    connection.query(sql, [bdid], function (error, result) {
       console.log(result);
       if (error) {
         console.log(error);
@@ -84,14 +85,16 @@ let Addevent = (req, res) => {
   var addrevent = req.body.addrevent;
   var pledgenumber = req.body.pledgenumber;
 
+  const bdid = req.session.data[0].bdid;
+
   connection.connect(function (error) {
     console.log(error);
     var sql =
-      "insert into campaign(bdid,cname, open_time, start_date, end_date, address, pledge_number) values ('BD001',?,?, ?, ?, ?,?);";
+      "insert into campaign(bdid ,cname, open_time, start_date, end_date, address, pledge_number) values (? ,?,?, ?, ?, ?,?);";
 
     connection.query(
       sql,
-      [eventname, opentime, startdate, enddate, addrevent, pledgenumber],
+      [bdid, eventname, opentime, startdate, enddate, addrevent, pledgenumber],
       function (error, result) {
         console.log(error);
         if (error) {

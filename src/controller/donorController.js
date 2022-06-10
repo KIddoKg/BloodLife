@@ -42,6 +42,7 @@ let Nutripage = (req, res) => {
 
 let Appointment = (req, res) => {
   // var iddonorsea = req.
+  const iddonorsea = req.session.data[0].did;
   connection.connect(function (error) {
     if (error) console.log(error);
     var sql = "select * from Donor where did = ?";
@@ -58,33 +59,25 @@ let Appointment = (req, res) => {
 };
 
 let Information = (req, res) => {
-  var iddonorsea = "D0001";
+  const iddonorsea = req.session.data[0].did;
   connection.connect(function (error) {
     if (error) console.log(error);
     var sql =
-      "SELECT name, ssn, imgid,gender, birthday, phone, email, address, blood_type, med_cond FROM donor  where did LIKE 'D0001' UNION SELECT bid,did, blood_type, product_type,input_date, SUM(volume) AS TotalItemsOrdered ,exp_date,is_ordered,blood_type,is_discarded from bloodstock  where did LIKE ? ;";
+      "SELECT name, ssn, imgid, gender, birthday, phone, email, address, blood_type, med_cond FROM donor  where did LIKE ? UNION SELECT bid,did, blood_type, product_type,input_date, SUM(volume) AS TotalItemsOrdered ,exp_date,is_ordered,blood_type,is_discarded from bloodstock  where did LIKE ? ;";
 
-    var values = [[iddonorsea]];
+    // var values = [[iddonorsea]];
 
-    connection.query(sql, [values], function (error, result) {
+    connection.query(sql, [iddonorsea, iddonorsea], function (error, result) {
       if (error) {
         console.log(error);
       }
-      const dobDate = [];
-      // const totalVolume = []
+      // const dobDate = [];
 
-      // for (var i = 0; i < result.length; i++) {
-      //   totalVolume[i] = result[i].v;
-      //   result[i].birthday = dobDate[i];
-      // }
-
-      for (var i = 0; i < result.length; i++) {
-        dobDate[i] = format(result[i].birthday);
-        result[i].birthday = dobDate[i];
-      }
+      const dobDate = format(result[0].birthday);
+      result[0].birthday = dobDate;
 
       console.log(iddonorsea);
-      // res.render("./addBlood",{donor:result});
+
       console.log(result);
 
       res.render("information.ejs", { info: result });
@@ -93,14 +86,15 @@ let Information = (req, res) => {
 };
 
 let Showdonate = (req, res) => {
-  var iddonorsea = "D0001";
+  // var iddonorsea = "D0001";
+  const iddonorsea = req.session.data[0].did;
   connection.connect(function (error) {
     if (error) console.log(error);
     var sql = "SELECT * FROM bloodstock  where did LIKE ?";
 
-    var values = [[iddonorsea]];
+    // var values = [[iddonorsea]];
 
-    connection.query(sql, [values], function (error, result) {
+    connection.query(sql, iddonorsea, function (error, result) {
       if (error) {
         console.log(error);
       }
@@ -121,7 +115,7 @@ let Showdonate = (req, res) => {
       }
 
       console.log(iddonorsea);
-      // res.render("./addBlood",{donor:result});
+
       console.log(result);
 
       res.send(result);
@@ -130,14 +124,16 @@ let Showdonate = (req, res) => {
 };
 
 let Updatepagefill = (req, res) => {
-  var iddonorsea = "D0001";
+  // var iddonorsea = "D0001";
+  const iddonorsea = req.session.data[0].did;
+
   connection.connect(function (error) {
     if (error) console.log(error);
     var sql = "SELECT * FROM donor  where did LIKE ?";
 
-    var values = [[iddonorsea]];
+    // var values = [[iddonorsea]];
 
-    connection.query(sql, [values], function (error, result) {
+    connection.query(sql, iddonorsea, function (error, result) {
       if (error) {
         console.log(error);
       }
@@ -162,7 +158,8 @@ let Updatepagefill = (req, res) => {
 let Updatepage = (req, res) => {
   var { username, ssn, gender, birthday, phone, addr } = req.body;
 
-  var iddonorup = "D0001";
+  var iddonorup = req.session.data[0].did;
+  // var iddonorup = "D0001";
 
   connection.connect(function (error) {
     console.log(error);
@@ -200,7 +197,9 @@ let Updateavatar = (req, res) => {
 let Posteavatar = (req, res) => {
   var img = req.body.img;
 
-  var iddonorup = "D0001";
+  // var iddonorup = "D0001";
+
+  var iddonorup = req.session.data[0].did;
 
   connection.connect(function (error) {
     console.log(error);
@@ -226,39 +225,34 @@ let Posteavatar = (req, res) => {
   });
 };
 let Appointmentpost = (req, res) => {
-  var iddonor = req.body.iddonor;
-  var name = req.body.name;
-  var email = req.body.email;
-  var phone = req.body.phone;
-  var date = req.body.date;
-  var txtTime = req.body.txtTime;
-  var message = req.body.message;
+  // var iddonor = req.body.iddonor;
+  // var date = req.body.date;
+  // var txtTime = req.body.txtTime;
+  // var message = req.body.message;
+
+  const { iddonor, date, txtTime, message } = req.body;
 
   connection.connect(function (error) {
     console.log(error);
     var sql =
       "insert into Appointment(did, appoint_date,appoint_time, mesage_note) values (?,?,?,?);";
 
-    var values = [[iddonor, date, txtTime, message]];
+    var values = [iddonor, date, txtTime, message];
 
-    connection.query(
-      sql,
-      [iddonor, date, txtTime, message],
-      function (error, result) {
-        console.log(error);
-        if (error) {
-          res.render("./partials/error_msg", {
-            message: "Error Cannot make Appointment",
-            layout: "./layouts/authentication",
-          });
-        } else {
-          res.render("./partials/success_msg", {
-            message: "Success make Appointment ",
-            layout: "./layouts/authentication",
-          });
-        }
+    connection.query(sql, values, function (error, result) {
+      console.log(error);
+      if (error) {
+        res.render("./partials/error_msg", {
+          message: "Error Cannot make Appointment",
+          layout: "./layouts/authentication",
+        });
+      } else {
+        res.render("./partials/success_msg", {
+          message: "Success make Appointment ",
+          layout: "./layouts/authentication",
+        });
       }
-    );
+    });
   });
 };
 
