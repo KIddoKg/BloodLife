@@ -1,20 +1,213 @@
-body .credit {
+html,
+body {
+  width: 100%;
+  height: auto;
+  font-family: Fela Bold, sans-serif;
+  font-size: 15px;
+}
+.parallax1 {
+  /* The image used */
+  background-image: url("/img/lifeblood-of-australia-header-1580x490_0.jpg");
+
+  /* Set a specific height */
+  min-height: 70rem;
+  position: relative;
+  /* Create the parallax scrolling effect */
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.parallax2 {
+  /* The image used */
+  background-image: url("/img/woman-donating-nurse-full-width-feature-1580x780.jpg");
+
+  /* Set a specific height */
+  min-height: 40rem;
+  position: relative;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#container__fluid {
+  background: white; /* fallback for old browsers */
+
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  color: inherit;
+  z-index: 10;
+  width: 55rem;
+  height: 40rem;
+  top: 15%;
+  margin-left: 7rem;
 }
-body .options {
+.container__title {
+  animation: moveInLeft 1s ease-out;
+  font-size: 7rem;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  margin-top: 4rem;
+  font-weight: 700;
+  color: rgba(94, 0, 36);
+}
+.container__text {
+  text-align: left;
+  font-size: 2rem;
+  padding-bottom: 10rem;
+  padding-left: 5rem;
+  margin-top: 1rem;
+  animation: moveInLeft 1s ease-out;
+}
+
+.text__after-header--title {
+  font-size: 5rem;
+  color: rgba(94, 0, 36);
+}
+.btn-primary {
+  --tw-bg-opacity: 1;
+  --tw-text-opacity: 1;
+  background-color: rgba(164, 21, 45, var(--tw-bg-opacity));
+  border-radius: 1rem;
+  border-radius: 15px;
+  border-style: none;
+  border: none;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  cursor: pointer;
+  display: inline-block;
+  font-family: Montserrat, sans-serif;
+  font-size: 1rem;
+  font-size: 15px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 600;
+  font-weight: 600;
+  letter-spacing: 0;
+  padding: 10px 35px;
+  text-align: center;
+}
+
+#product__type {
+  background: #f6f6f6; /* fallback for old browsers */
+
+  background: linear-gradient(to right, #f6f6f6, #f6f6f6);
+  clip-path: ellipse(100% 55% at 16% 56%);
+  width: 100%;
+  /* height: 100rem; */
+}
+#product__type1 {
+  background: #f6f6f6; /* fallback for old browsers */
+
+  background: linear-gradient(to right, #f6f6f6, #f6f6f6);
+  clip-path: ellipse(100% 58% at 21% 62%);
+  width: 100%;
+  /* height: 100rem; */
+}
+#at__center {
+  width: 100%;
+  /* height: 100rem; */
+}
+
+.text__product {
+  font-size: 5rem;
+  font-weight: 700;
+  color: rgba(94, 0, 36);
+  padding-bottom: 3rem;
+}
+.border_product {
+  padding-top: 20rem;
+  padding-left: 3rem;
+}
+.para_product {
+  color: rgba(110, 105, 105);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.75;
+}
+
+.product__title {
+  padding: 3rem 0 2rem 0;
+  color: #000;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.product__detail {
+  color: rgba(110, 105, 105);
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 2rem 0 2rem 0;
+}
+.number {
+  align-items: center;
+  background-color: rgba(228, 35, 19);
+  border-radius: 9999px;
+  color: rgba(255, 255, 255);
+
   display: flex;
+
   flex-direction: row;
-  align-items: stretch;
-  overflow: hidden;
-  min-width: 600px;
-  max-width: 900px;
-  width: calc(100% - 100px);
-  height: 400px;
-  margin-top: 20rem;
+  font-size: 2.125rem;
+  font-weight: 600;
+  height: 4.5rem;
+  justify-content: center;
+  margin-right: 1.125rem;
+  width: 4.5rem;
 }
+.number_block__wrapper {
+  align-items: center;
+  /* background-color: rgba(228, 35, 19); */
+
+  color: rgba(255, 255, 255);
+
+  display: flex;
+
+  flex-direction: row;
+
+  font-size: 1.125rem;
+  font-weight: 600;
+  height: 2.5rem;
+  margin-right: 1.125rem;
+  width: 2.5rem;
+  margin: 10rem;
+}
+
+.number_block__wrapper {
+  font-weight: 300;
+
+  top: 0.75rem;
+}
+.number {
+  font-weight: 300;
+
+  top: 0.75rem;
+}
+.number_block__wrapper {
+  align-items: baseline;
+
+  display: flex;
+
+  flex-direction: row;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.number_block__wrapper__content {
+  max-width: 85%;
+}
+.block-numbered-list-block {
+  max-width: 85%;
+}
+.number_block__wrapper__content {
+  color: rgba(110, 105, 105);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.75;
+}
+
+#ques_heal {
+  margin-top: 4rem;
+}
+
 @media screen and (max-width: 718px) {
   body .options {
     min-width: 520px;
@@ -262,46 +455,6 @@ section {
     background-attachment: scroll;
   }
 }
-.parallax {
-  /* The image used */
-  background-image: url("../img/nuti.png");
-
-  /* Set a specific height */
-  min-height: 70rem;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.parallax1 {
-  /* The image used */
-  background-image: url("../img/nuti.png");
-
-  /* Set a specific height */
-  min-height: 20rem;
-  position: relative;
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.parallax3 {
-  /* The image used */
-  background-image: url("../img/nuti.png");
-
-  /* Set a specific height */
-  min-height: 55rem;
-  position: relative;
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
 ul.about-details-list {
   list-style-type: none;
@@ -310,10 +463,10 @@ ul.about-details-list {
 
 ul.about-details-list li {
   margin: 2rem 1rem 1rem 3rem;
-  font: 1.5rem "Segoe UI", Arial, sans-serif;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 400;
-  letter-spacing: 0.01rem;
+  line-height: 1.6;
   padding: 0;
 }
 
@@ -337,13 +490,8 @@ ul.about-details-list li:before {
 .before__process p {
   margin-top: 2.5rem;
 }
-
-.before__process {
-  height: 100%;
-  min-height: 20rem;
-  background-image: url(/img/2.png);
-  background-repeat: no-repeat;
-  background-position: center;
+#before__process {
+  padding: 0 3rem 0 3rem;
 }
 
 .process__title {

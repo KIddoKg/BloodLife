@@ -1,637 +1,432 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link rel="shortcut icon" type="image/png" href="/image/LogoAI.png" />
+    <title>AI Doctor</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--Add this-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
+      rel="stylesheet"
+    />
+    <!--Add this-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <!--Add this-->
+
+    <link
+      href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/nuti.css" />
     <link rel="stylesheet" href="../css/styleall.css" />
-    <link rel="stylesheet" href="../css/nuti.css"/>
-    <link rel="stylesheet" href="../css/test.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!--Add this-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-    <!--Add this-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <!--Add this-->
-
-    <link href='https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css' rel='stylesheet'>
-    <title>Nutri</title>
-
-</head>
-<body>
+  </head>
+  <body>
     <div class="navigation">
-        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
-        <label for="navi-toggle" class="navigation__button">
-            <span class="navigation__icon">&nbsp;</span>
-        </label>
-        <div class="navigation__background">&nbsp;</div>
-        <div class="navigation__nav">
-            <ul class="navigation__list">
-                <li class="navigation__item"><a href="/donor" class="navigation__link">About us</a></li>
-                <li class="navigation__item"><a href="/donor/nutri" class="navigation__link">Nutrition</a></li>
-                <li class="navigation__item"><a href="/donor/appointment" class="navigation__link">Appointment</a></li>
-                <li class="navigation__item"><a href="/donor/information" class="navigation__link">Personal Information</a></li>
-                <li class="navigation__item"><a href="/donor/logout" class="navigation__link" >Logout</a></li>
-            </ul>
-        </div>
+      <input type="checkbox" class="navigation__checkbox" id="navi-toggle" />
+      <label for="navi-toggle" class="navigation__button">
+        <span class="navigation__icon">&nbsp;</span>
+      </label>
+      <div class="navigation__background">&nbsp;</div>
+      <div class="navigation__nav">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="/" class="navigation__link">About us</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <main>
-        <div class="parallax1">
-        <section class="section-about">
-            <div class="container">
-                <div class="about-details">
-                    <h3 class="heading-third">Prepare and after care</h3>
-                </div>
-            </div>
-        </section>
+    <nav>
+      <div class="container__fluid padding" id="container__fluid">
+        <div class="row text-center padding">
+          <div class="col-md-12">
+            <h1 class="container__title">Ready to start saving lives?</h1>
+            <p class="container__text">
+              When you give blood, you’re more than just a donor. You’re the
+              Lifeblood of your friends, family and community. Join us and book
+              your donation today.
+            </p>
+          </div>
         </div>
-        <section class="before__process">
-            <div class="container">
-                <h3 class="process__title">Before you donate</h3>
-                <div class="row">
-                    
-                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                        <div class="test">
-                        <div class="process__detail"><i class="fa-solid fa-martini-glass-citrus"></i> Hydrate and eat</div>
-                        <p>One of the most important things you can do to look after your own health is to drink lots of fluids and have plenty to eat. </p>
-                    </div>
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"> 
-                        <div class="process__detail"><i class="fa-solid fa-clock-rotate-left"></i> The day before</div>
-                        <ul class="about-details-list">
-                            <li>Drink&nbsp;plenty of fluids — 10 glasses for men or 8 glasses for women.&nbsp;</li>
-                            <li>Try to get a good night’s sleep.&nbsp;<br>
-                            &nbsp;</li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">      
-                        <div class="process__detail"><i class="fa-solid fa-clock-rotate-left"></i> 3hrs before</div>
-                        <ul class="about-details-list">
-                            <li>Drink&nbsp;plenty of fluids — 10 glasses for men or 8 glasses for women.&nbsp;</li>
-                            <li>Try to get a good night’s sleep.&nbsp;<br>
-                            &nbsp;</li>
-                        </ul>
-                    </div>
-                </div>
+      </div>
+    </nav>
+    <div class="parallax1"></div>
+
+    <div class="container__fluid padding" id="product__type1">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="border_product">
+            <h1 class="text__product">What can I give?</h1>
+            <p class="para_product">
+              Choose between plasma, blood or platelets. If you don’t know your
+              blood type, book the donation that best suits you. We can tell you
+              your blood type and talk about the best donation for you to give
+              next time.
+            </p>
+            <br />
+            <br />
+            <br />
+          </div>
+          <div class="row" id="before__process">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+              <img
+                src="/img/EQ_DonationPlasma.png"
+                width="150px"
+                height="150px"
+              />
+              <h3 class="product__title">Plasma</h3>
+              <p class="para_product">
+                Over half of your blood is a liquid called plasma – and donating
+                it is a game-changer. Your plasma can help in 18 life-giving
+                ways, from treating serious burns to cancer.
+              </p>
+              <div class="question__product">
+                <h4 class="product__detail">
+                  <strong>How long does it take?</strong>
+                </h4>
+                <p class="para_product">
+                  45 minutes to donate, up to 1.5 hours for the whole
+                  appointment.
+                </p>
+              </div>
             </div>
-        </section>
-
-        <div class="parallax1"></div>
-        
-        <section class="after__process">
-            <div class="container">
-                <h3 class="process__title">After you donate</h3>
-                <div class="row">
-                    <div class="img__color--1">
-                        <img src="/img/4.png" alt="">
-                    </div>
-                    <div class="img__color--2">
-                        <img src="/img/3.png" alt="">
-                    </div>
-                    
-                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"> 
-                        <div class="process__detail"><i class="fa-solid fa-clock-rotate-left"></i> Right after</div>
-                        <p>It’s tempting to hurry over to the refreshments area to have your pick of the snacks, but take your time before you get up. It’s important that you rest for a few minutes in the donor chair. 
-                        </p>
-                        <p>When you’re ready, you can head over to the refreshments area to relax for another 15 minutes. Find your favourite snack, have a cool drink, maybe make a cup of tea, and enjoy.
-                        </p>
-                        <p>
-                            Make sure you grab a juice or water on your way out. </p>
-                    </div>
-                    
-                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"> 
-                        <div class="process__detail"><i class="fa-solid fa-clock-rotate-left"></i> The day before</div>
-                        <p>Drink plenty more fluids. Aim for another 3 good-sized glasses in the first 3 hours. 
-                        </p>
-                   
-                        <p>Take a seat when you can. Your body needs a bit of time to recover, so try to avoid spending too much time on your feet.   
-                        </p>
-                      
-                        <p>
-                            Try not to overheat. Some days it’s tricky, but do your best to avoid hot showers, rushing around, standing in direct sun and hot drinks. 
-                        </p>
-                        <p> Stay away from alcoholic drinks. 
-                        </p>
-                        <p> Eat regular meals — you’ll need your energy.</p>
-                       
-                    </div>
-                    
-                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">      
-                        <div class="process__detail"><i class="fa-solid fa-clock-rotate-left"></i> 3hrs before</div>
-                        <p>Avoid strenuous exercise (like cycling, jogging or going to the gym) or hazardous activities, including activities or jobs where public safety may be affected. If you’re not sure whether that applies to your job, check with your boss, donate outside of work hours, or bring it up in your pre-donation interview. 
-
-                        </p>
-                     
-                        <p>
-                            Most people feel great after they donate. In fact, you’re probably feeling pretty good about yourself (as you should!), but if you feel unwell at any point, please call us on 13 14 95.  
-                        </p>
-                      
-                        
-                    </div>
-                </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+              <img
+                src="/img/blood-bag-badge-250x250.png"
+                width="150px"
+                height="150px"
+              />
+              <h3 class="product__title">Blood</h3>
+              <p class="para_product">
+                Short on time? Choose ‘blood’, and you could save up to 3 lives
+                before lunch! If you time it right, you could even donate during
+                your lunch break with snacks on us.
+              </p>
+              <div class="question__product">
+                <h4 class="product__detail">
+                  <strong>How long does it take?</strong>
+                </h4>
+                <p class="para_product">
+                  10 minutes to donate, 60 minutes for the whole appointment.
+                </p>
+              </div>
             </div>
-        </section>
-
-        <div class="parallax">
-        <section class="nutri__tab">
-            <div class="container padding">
-                <div class="row">
-                    
-                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                        <div class="nutri__info">
-                            <div class="nutri__info--first">
-                                <h3 class="heading-secondary">Provide nutrition</h3>
-                                <div> 
-                                    <span class="heading-separator"></span>
-                                </div>
-                            <p class="about-details-first">
-                                After donating blood, our body needs to be provided with enough nutrients to be able to regenerate the lost blood.
-                            </p>
-                            </div>
-                            <div class="nutri_info--second">
-                                <p>
-                                    You need to get enough nutrition from sources
-                                </p>
-                                <div class="feature-row__icons">
-                                    <ul class="icon-list">
-                                        <li class="icon-list__item">
-                                            <i class="fa-solid fa-leaf"></i>
-                                            <div class="benefit_text">100% Plant-based</div>
-                                      </li>
-                                      
-                                        <li class="icon-list__item">
-                                            <i class="fa-solid fa-drumstick-bite"></i>
-                                            <div class="benefit_text">100% Plant-based</div>
-                                        </li>
-
-                                        <li class="icon-list__item">
-                                            <i class="fa-solid fa-fish"></i>
-                                            <div class="benefit_text">100% Plant-based</div>
-                                        </li>
-
-                                        <li class="icon-list__item">
-                                            <i class="fa-solid fa-mug-saucer"></i>
-                                            <div class="benefit_text">100% Plant-based</div>
-                                        </li>
-                                      
-                                     </ul>
-                                   </div>
-
-                                <p>
-                                    We recommend the following dishes
-                                </p>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
-                        <section class="cardwrapper">
-                            <div class="card">
-                             <div class="imgBx">
-                              <nav></nav>
-                             </div>
-                             <div class="details">
-                              <h2>What is Lorem Ipsum?</h2>
-                              <p><a href="#">Lorem Ipsum</a> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
-                               to make a type specimen book.</p>
-                              <nav></nav>
-                             </div>
-                            </div>
-                            <div class="card">
-                                <div class="imgBx">
-                                 <nav></nav>
-                                </div>
-                                <div class="details">
-                                 <h2>What is Lorem Ipsum?</h2>
-                                 <p><a href="#">Lorem Ipsum</a> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
-                                  to make a type specimen book.</p>
-                                 <nav></nav>
-                                </div>
-                               </div>
-                                          
-                            <div class="card">
-                             <div class="imgBx">
-                              <nav></nav>
-                             </div>
-                             <div class="details">
-                              <h2>What is Lorem Ipsum?</h2>
-                              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                              <nav></nav>
-                             </div>
-                            </div>
-                           
-                        </section>
-                        <section class="cardwrapper">
-                            <div class="card">
-                             <div class="imgBx">
-                              <nav></nav>
-                             </div>
-                             <div class="details">
-                              <h2>What is Lorem Ipsum?</h2>
-                              <p><a href="#">Lorem Ipsum</a> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
-                               to make a type specimen book.</p>
-                              <nav></nav>
-                             </div>
-                            </div>
-                            <div class="card">
-                                <div class="imgBx">
-                                 <nav></nav>
-                                </div>
-                                <div class="details">
-                                 <h2>What is Lorem Ipsum?</h2>
-                                 <p><a href="#">Lorem Ipsum</a> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
-                                  to make a type specimen book.</p>
-                                 <nav></nav>
-                                </div>
-                               </div>
-                                          
-                            
-                            </div>
-                           
-                        </section>
-                        
-                    </div>
-                </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+              <img
+                src="/img/EQ_DonationPlatelets.png"
+                width="150px"
+                height="150px"
+              />
+              <h3 class="product__title">Plasma</h3>
+              <p class="para_product">
+                Over half of your blood is a liquid called plasma – and donating
+                it is a game-changer. Your plasma can help in 18 life-giving
+                ways, from treating serious burns to cancer.
+              </p>
+              <div class="question__product">
+                <h4 class="product__detail">
+                  <strong>How long does it take?</strong>
+                </h4>
+                <p class="para_product">
+                  60 minutes to donate, about 2 hours for the whole appointment.
+                </p>
+              </div>
             </div>
-        </section>
-         </div>
-        <section class="form-blood">
-            <div class="container">
-                <div class="img__color--1">
-                    <img src="/img/4.png" alt="">
-                </div>
-                <div class="col-md-12 col-sm-12 text-center">
-                    
-                    <div class="form__title">
-                        
-                        <h2 class="form__heading"><span>FQA</span> ?</h2>
-                        <p class="form__subheading">
-                            Some things you need to know about donating blood
-                        </p>
-                    </div>
-                </div> <!-- end .row  -->
-    
-            </div>
-        </section>
-        <div class="parallax3">
-            <section class="nutri__FQA">
-                <div class="container padding">	
-                    <div class="row text-center">
-                    <button class="accordion">What is BloodLife?</button>
-                    <div class="accordion__panel">
-                        <p class="accordion__panel--text">
-                            BloodLife is a blood donation center, storing blood and distributing it to places where blood is needed.
-                            
-                        </p>
-                        <p class="accordion__panel--text">
-                            We were created to help manage blood donations, ensure blood quality, classify and store to avoid errors as well as loss of blood quality. Ensure the best quality when reaching the patient.
-                        </p>
-                        <p class="accordion__panel--text">
-                            Control rare blood groups, store information of people with rare blood types.
-                        </p>
-                    </div>
-                
-                    <button class="accordion">Reasons for a transfusion ?</button>
-                    <div class="accordion__panel">
-                        <p class="accordion__panel--text">
-                            There are many medical conditions or problems that might require a transfusion. Some reasons include cancer, operations, blood problems, pregnancy and birth.
-                        </p>
-                    </div>
-                
-                    <button class="accordion">What can I give ?</button>
-                    <div class="accordion__panel">
-                        <p class="accordion__panel--text">
-                            Plasma: 
-                            Over half of your blood is a liquid called plasma – and donating it is a game-changer. Your plasma can help in 18 life-giving ways, from treating serious burns to cancer.
-                        </p>
-                        <p class="accordion__panel--text">
-                            Blood:
-                            Short on time? Choose ‘blood’, and you could save up to 3 lives before lunch! If you time it right, you could even donate during your lunch break with snacks on us. 
-                        </p>
-                        <p class="accordion__panel--text">
-                            Platelets:
-                            These tiny 'plates' in your blood make a huge difference for seriously ill patients. If you're male and have donated plasma in the past 12 months, let's talk about platelets. 
-                        </p>
-                    </div>
-                    <button class="accordion">How do I donate? ?</button>
-                    <div class="accordion__panel">
-                        <p class="accordion__panel--text">
-                            You can contact us via hotline number and schedule an appointment.
-                            Simply, you can visit the website and register an appointment in the registration form.
-                        </p>
-                        <p class="accordion__panel--text">
-                            We will check your health to make sure your body is eligible to donate blood
-                        </p>
-                    </div>
-                    <button class="accordion">What do I need to prepare before donating blood?</button>
-                    <div class="accordion__panel">
-                        <p class="accordion__panel--text">
-                            One of the most important things you can do to look after your own health is to drink lots of fluids and have plenty to eat. 
-                        </p>
-                        <p class="accordion__panel--text">
-                            The day before:
-                            Drink plenty of fluids - 10 glasses for men or 8 glasses for women. 
-                            Try to get a good night’s sleep. 
-                        </p>
-                        <p class="accordion__panel--text">
-                            3hrs before
-                            Drink 750mL (that’s 3 good-sized glasses) of fluids. 
-                            Have something savoury to eat. 
-                            Avoid strenuous exercise.  
-                        </p>
-                    </div>
-                    <button class="accordion">How do I update my information on the AI Doctor ?</button>
-                    <div class="accordion__panel">
-                        <p class="accordion__panel--text">
-                        To update your details, log in on the website and click the "Person" box at the top right of the screen and select the item you want to update. Once you've finished updating, click the "Save" button and your details will be updated.
-                        </p>
-                    </div>
-                    
-                    <button class="accordion">Is my personal data safe on the platform ?</button>
-                    <div class="accordion__panel">
-                        <p class="accordion__panel--text">
-                        Of course, we take security very seriously. Our platform uses end-to-end encryption to keep your information secure.
-                        </p>
-                        <p class="accordion__panel--text">
-                        Our patient data and medical records are compliant with the Personal Data Protection Act (PDPA). These records can only be accessed by healthcare providers directly involved in patient care and to support internal processes.
-                        </p>
-                    </div>
-                    
-                </div>
-                </div>
-            </section>
+          </div>
         </div>
-     
-     </main>
-    
-</body>
- <!-- <footer>
-    <div class="footer">
-        <div class="bubbles">
-        <div class="bubble" style="--size:5.570752171177261rem; --distance:8.390196831827655rem; --position:1.9566341089494195%; --time:2.8405160637270988s; --delay:-2.5972180886573812s;"></div>
-        <div class="bubble" style="--size:4.199384531275629rem; --distance:8.657382686869754rem; --position:89.78586525226397%; --time:3.2423631935408466s; --delay:-3.623352658324916s;"></div>
-        <div class="bubble" style="--size:2.3045107195136465rem; --distance:9.598129382245636rem; --position:80.58383125359%; --time:3.3048492730007353s; --delay:-2.834906349853572s;"></div>
-       
-        <div class="bubble" style="--size:2.6245518106000567rem; --distance:8.863202713432777rem; --position:39.57830743018673%; --time:2.1871559093291157s; --delay:-2.0915764532499947s;"></div>
-        <div class="bubble" style="--size:3.7173382968517137rem; --distance:7.611473086190333rem; --position:15.063056430357019%; --time:2.387563817234884s; --delay:-2.8640740976677783s;"></div>
-        <div class="bubble" style="--size:5.326433442345109rem; --distance:6.350571952892427rem; --position:48.63636038173985%; --time:3.184406039446864s; --delay:-2.4194006611635746s;"></div>
-        <div class="bubble" style="--size:4.9388886059380015rem; --distance:8.239722741650937rem; --position:35.613538881241844%; --time:2.3624749180987097s; --delay:-2.550335219653891s;"></div>
-        <div class="bubble" style="--size:5.2277315380625495rem; --distance:9.611913889265274rem; --position:37.73627306767939%; --time:3.851428129387339s; --delay:-2.8598658755607356s;"></div>
-        <div class="bubble" style="--size:2.1533415526761646rem; --distance:6.092550460570463rem; --position:50.32067303373814%; --time:3.8944109596162906s; --delay:-2.415985412881925s;"></div>
-        <div class="bubble" style="--size:3.7087624857609454rem; --distance:6.2311131184250526rem; --position:25.450641634993982%; --time:2.2034898568988175s; --delay:-2.2616587855450585s;"></div>
-        <div class="bubble" style="--size:5.658773335371458rem; --distance:9.270230818745773rem; --position:43.87682582964697%; --time:3.5471070771575346s; --delay:-2.490484604088559s;"></div>
-        <div class="bubble" style="--size:2.6521671913318112rem; --distance:8.8115933990249rem; --position:18.8631647428404%; --time:3.655745349443076s; --delay:-2.3198667461459324s;"></div>
-        <div class="bubble" style="--size:2.8252422674682123rem; --distance:9.481492882488334rem; --position:67.13949721658943%; --time:3.0194592432171468s; --delay:-3.610776643920791s;"></div>
-        <div class="bubble" style="--size:5.03188302806095rem; --distance:6.522111977086658rem; --position:6.745254594459265%; --time:2.9570789940130195s; --delay:-3.000092955157701s;"></div>
-       
-        <div class="bubble" style="--size:2.391869015224298rem; --distance:6.909026926807933rem; --position:9.420508285239158%; --time:3.6698739064027706s; --delay:-2.860568666912293s;"></div>
-        <div class="bubble" style="--size:5.832474855461722rem; --distance:9.635447717819055rem; --position:90.44433286165408%; --time:3.0239359639985732s; --delay:-2.8823194931041494s;"></div>
-        <div class="bubble" style="--size:5.214720365140654rem; --distance:8.897597797449711rem; --position:13.620876202443348%; --time:2.449245374327162s; --delay:-2.1074602893365677s;"></div>
-        <div class="bubble" style="--size:5.214752662919827rem; --distance:6.361445351258465rem; --position:36.95192342451876%; --time:3.1078712896463747s; --delay:-3.1186488599163953s;"></div>
-        <div class="bubble" style="--size:3.533888520282762rem; --distance:9.23187691686135rem; --position:66.42706330181775%; --time:3.788306366691999s; --delay:-2.634925145280483s;"></div>
-        <div class="bubble" style="--size:2.34155207960898rem; --distance:9.4573452954337rem; --position:65.9479447671287%; --time:3.4727003023475387s; --delay:-3.87761948424245s;"></div>
-        <div class="bubble" style="--size:4.42686359495001rem; --distance:9.257047048705733rem; --position:72.9275285415616%; --time:3.6711339213042793s; --delay:-2.522418292598796s;"></div>
-        <div class="bubble" style="--size:4.938351234803718rem; --distance:9.30944641888297rem; --position:95.33884378583359%; --time:2.0602536778880873s; --delay:-2.243491158910438s;"></div>
-        <div class="bubble" style="--size:3.450567372687355rem; --distance:8.420929359359866rem; --position:-1.6973968553259877%; --time:2.9906208250459847s; --delay:-3.449349344618716s;"></div>
-        <div class="bubble" style="--size:5.393631515048126rem; --distance:9.4218801180041rem; --position:44.303092761179066%; --time:3.4775579167662367s; --delay:-2.9514097481544503s;"></div>
-        <div class="bubble" style="--size:3.8532355772067115rem; --distance:6.860101804772449rem; --position:86.62369416724975%; --time:3.8205298398404355s; --delay:-3.9347815029363193s;"></div>
-        <div class="bubble" style="--size:5.437783603828346rem; --distance:9.43765018810649rem; --position:60.88607142951385%; --time:2.583695664890517s; --delay:-2.56322350721507s;"></div>
-        <div class="bubble" style="--size:5.652044734176562rem; --distance:8.516072274503358rem; --position:10.009930811626461%; --time:3.662141165844268s; --delay:-3.094851130662415s;"></div>
-        <div class="bubble" style="--size:3.959779809288939rem; --distance:6.43984981893379rem; --position:66.60867523009514%; --time:2.5681254735439274s; --delay:-3.9517631752402074s;"></div>
-       
-        <div class="bubble" style="--size:5.349862290657527rem; --distance:7.898649853102416rem; --position:11.448798076783827%; --time:2.305095308263569s; --delay:-3.4695741509266353s;"></div>
-        <div class="bubble" style="--size:2.814601747701074rem; --distance:7.7408098714679445rem; --position:52.1558970837407%; --time:2.6153611286183343s; --delay:-3.3726547699883125s;"></div>
-        <div class="bubble" style="--size:5.126604634200568rem; --distance:8.636499313792026rem; --position:67.76195249202767%; --time:3.294454727652601s; --delay:-3.323965703665604s;"></div>
-        <div class="bubble" style="--size:2.4385037735878656rem; --distance:7.504785934768405rem; --position:67.5979091382239%; --time:2.9323751329306877s; --delay:-2.8660737736772215s;"></div>
-        <div class="bubble" style="--size:2.943099569239238rem; --distance:6.826913547557997rem; --position:13.960369315536564%; --time:3.1219247796950604s; --delay:-3.589381315554594s;"></div>
-        <div class="bubble" style="--size:5.2854669516588775rem; --distance:9.929164831080373rem; --position:18.07078984398578%; --time:2.0924846577132867s; --delay:-2.1333506549348846s;"></div>
-        <div class="bubble" style="--size:5.6162290530586825rem; --distance:7.111481043066868rem; --position:53.59755959637456%; --time:2.062543816387306s; --delay:-2.146505492385626s;"></div>
-        <div class="bubble" style="--size:5.621345991312017rem; --distance:6.985231299032817rem; --position:90.59217248886927%; --time:2.844225776825454s; --delay:-2.4065493405726843s;"></div>
-        <div class="bubble" style="--size:2.881937683500804rem; --distance:7.641060541378499rem; --position:76.75005230767509%; --time:3.264584651782804s; --delay:-3.651287031132729s;"></div>
-        <div class="bubble" style="--size:2.302794638791589rem; --distance:7.576185056691998rem; --position:98.46130839327964%; --time:2.560431267393312s; --delay:-3.105485971044347s;"></div>
-        <div class="bubble" style="--size:3.299554156307928rem; --distance:7.6830524003324685rem; --position:13.45328783042985%; --time:3.836269298859359s; --delay:-2.961576159040998s;"></div>
-        <div class="bubble" style="--size:3.7556094532309867rem; --distance:8.779487003892953rem; --position:28.123539739842926%; --time:3.2839859357796213s; --delay:-2.4699277481163695s;"></div>
-        <div class="bubble" style="--size:2.195977488456947rem; --distance:8.181150785149487rem; --position:23.39351828856459%; --time:3.8420429549145525s; --delay:-2.8067786233462826s;"></div>
-        <div class="bubble" style="--size:4.545985785296518rem; --distance:7.517868825360281rem; --position:74.9547818094597%; --time:3.398242095305887s; --delay:-3.8201772869273287s;"></div>
-        <div class="bubble" style="--size:5.793496923131996rem; --distance:7.0953270721578585rem; --position:18.935113723147637%; --time:2.120550512117114s; --delay:-3.838695723098968s;"></div>
-        <div class="bubble" style="--size:5.469062913565751rem; --distance:7.502027670841127rem; --position:22.375734528806742%; --time:2.0842388471236113s; --delay:-2.774671873389845s;"></div>
-        <div class="bubble" style="--size:3.273596391798793rem; --distance:7.599961915629796rem; --position:48.930073018994584%; --time:2.7595099162457917s; --delay:-3.6791753269286813s;"></div>
-        <div class="bubble" style="--size:5.023668509640467rem; --distance:9.31252325218945rem; --position:51.369885772996014%; --time:2.2606273800350034s; --delay:-2.600544913391518s;"></div>
-        
-        <div class="bubble" style="--size:5.933308937504415rem; --distance:8.067222948534145rem; --position:51.62042836755305%; --time:2.416901635780974s; --delay:-2.6849536608959723s;"></div>
-        <div class="bubble" style="--size:4.680657285253498rem; --distance:8.693532616378569rem; --position:14.011615375554236%; --time:3.919983973371362s; --delay:-3.746019846298487s;"></div>
-        <div class="bubble" style="--size:3.188550663520779rem; --distance:7.751197285014957rem; --position:24.635501144384662%; --time:3.828257768355185s; --delay:-3.2880752181077084s;"></div>
-        <div class="bubble" style="--size:3.2828847896233055rem; --distance:8.294821217423333rem; --position:28.32734235668751%; --time:2.3491029627566964s; --delay:-3.059694504847665s;"></div> 
-      
-        
-        <div class="bubble" style="--size:2.108583151623863rem; --distance:6.163826939468499rem; --position:45.43051151584047%; --time:3.56431572801s; --delay:-2.637035113689887s;"></div>
-        <div class="bubble" style="--size:4.16277412298616rem; --distance:7.2627032011584225rem; --position:30.40566430185404%; --time:2.660604318809474s; --delay:-2.6530729136403073s;"></div>
-        <div class="bubble" style="--size:4.284611979836788rem; --distance:9.073529729766264rem; --position:95.0084116151985%; --time:3.8817100283259602s; --delay:-2.13828358252453s;"></div>
-        <div class="bubble" style="--size:4.69181218218225rem; --distance:6.946169140717516rem; --position:85.21781659544074%; --time:2.284146496235573s; --delay:-3.6273553724372434s;"></div>
-        
-        <div class="bubble" style="--size:5.592226538725065rem; --distance:7.9633690268813115rem; --position:79.52731727913516%; --time:3.1609092182805054s; --delay:-3.100060191826165s;"></div>
-        <div class="bubble" style="--size:2.9683151946994037rem; --distance:8.893061176070416rem; --position:2.4513511958097256%; --time:3.9677291695782575s; --delay:-3.7327058829863318s;"></div>
-        <div class="bubble" style="--size:2.2339936065114223rem; --distance:6.130260876196816rem; --position:77.69784634641734%; --time:3.992791704077809s; --delay:-3.070717504638324s;"></div>
-        <div class="bubble" style="--size:3.8914866728058595rem; --distance:8.420554837048194rem; --position:70.45660649185751%; --time:2.590997098785495s; --delay:-3.4620753220346616s;"></div>
-        <div class="bubble" style="--size:4.783883695809796rem; --distance:6.212625988917369rem; --position:23.441514840862624%; --time:2.6525895857609503s; --delay:-2.7207635175184857s;"></div>
-        <div class="bubble" style="--size:5.160425077291303rem; --distance:7.14349883639635rem; --position:91.49864112939656%; --time:3.327310800895043s; --delay:-3.1671461724486094s;"></div>
-   
-        </div> 
+      </div>
     </div>
-    <div class="footer__detail">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                    <div class="footer__addr">
-                        <img src="./img/logo-heart.png" class="logo" alt="logo">
-                        <a class="footer__title"> If you need money please contact us</a>
-                        <br>
-                    <div class="footer__phone">
-                        <a href="tel:19001111">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ffffff" class="bi bi-phone"
-                            viewBox="0 0 16 16">
-                                <path
-                                d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z" />
-                                <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                            </svg>
-                            &nbspPhone: 19001111</a>
-                            </a>
-                    </div>
-                    <div class="footer__mail">
-                            <a href="mailto:aidoctor.se@gmail.com">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ffffff" class="bi bi-envelope-fill"
-                                viewBox="0 0 16 16">
-                                <path
-                                d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
-                                </svg>
-                                &nbspEmail: Bloodlife.pdm@gmail.com
-                                </a>			
-                    </div>
-                    </div>
-                </div>
-                <div class="col-0 col-sm-9 col-md-9 col-lg-9 col-xl-9">
-                    <ul class="footer__nav">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
-                                    <li class="nav__item">
-                                        <h2 class="nav__title">Company</h2>
-                                    
-                                        <ul class="nav__ul">
-                                            <li>
-                                            <a>Company</a>
-                                            </li>
-                                    
-                                            <li>
-                                            <a >Press Relese</a>
-                                            </li>
-                                                
-                                            <li>
-                                            <a>Clients</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </div>
-                                <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
-                                <li class="nav__item nav__item--extra">
-                                <h2 class="nav__title">Features</h2>
-                                
-                                <ul class="nav__ul nav__ul--extra">
-                                    <li>
-                                    <a>Quick Access</a>
-                                    </li>
-                                    
-                                    <li>
-                                    <a> Secure Payment</a>
-                                    </li>
-                                    
-                                    <li>
-                                    <a>24/7 Support</a>
-                                    </li>
-                                </ul>
-                                </li>
-                                </div>
-                                <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
-                                <li class="nav__item">
-                                <h2 class="nav__title">Legal</h2>
-                                
-                                <ul class="nav__ul">
-                                    <li>
-                                    <a>Privacy Policy</a>
-                                    </li>
-                                    
-                                    <li>
-                                    <a>Terms of Use</a>
-                                    </li>
-                                    
-                                    <li>
-                                    <a>Sitemap</a>
-                                    </li>
-                                </ul>
-                                </li>
-                                </div>
-                                <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
-                                    <h2 class="nav__title">Contact with us</h2>
-                                    <div class="footer__icon">
-                                        <a href="https://www.facebook.com/profile.php?id=100075688808770" target="_blank" class="social-network">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#ffffff" class="bi bi-facebook"
-                                        viewBox="0 0 16 16">
-                                        <path
-                                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
-                                        </svg>
-                                        </a>
-                                        <a href="https://www.youtube.com/channel/UCTPLbWQAT9TdXwDMBOYnhxQ" target="_blank" class="social-network">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#ffffff" class="bi bi-youtube"
-                                        viewBox="0 0 16 16">
-                                        <path
-                                        d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
-                                        </svg>
-                                        </a>
-                                        <a href="https://www.instagram.com/ai__doctor/" target="_blank" class="social-network">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#ffffff" class="bi bi-instagram"
-                                        viewBox="0 0 16 16">
-                                        <path
-                                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
-                                        </svg>
-                                        </a>
-                                        <a href="https://twitter.com/AI__Doctor" target="_blank" class="social-network">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#ffffff" class="bi bi-twitter"
-                                        viewBox="0 0 16 16">
-                                        <path
-                                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
-                                        </svg>
-                                        </a>  
-                                </div>  
-                                </div>
-                            </div>
-                        </div>
-                    </ul>
-    
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="footer__copy">
-        <div class="row">
-            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                <div class="legal">
-                <p>&copy; 2022 Bloodlife. All rights reserved.</p>
-                </div>
-            </div> 
-            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                <div class="legal__links">
-                <span>Made with <span class="heart">♥</span> remotely from Anywhere</span>
-                </div>
-            </div>  
-        </div>
-    </div>
-</div>
-<svg style="position: fixed; top: 100vh">
-  <defs>
-    <filter id="blob">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
-      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="blob"></feColorMatrix>
-      <feComposite in="SourceGraphic" in2="blob" operator="atop"></feComposite>
-    </filter>
-  </defs>
-</svg>
-</footer>  -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel="stylesheet" />
 
-<link href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://codepen.io/z-/pen/a8e37caf2a04602ea5815e5acedab458.js"></script>
-<script type="text/javascript">
-    $(".option").click(function(){
-        $(".option").removeClass("active");
-        $(this).addClass("active");
-        
-     });
-</script>
-<script>
-    //Lấy các button mô tả nội dung
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-    //lặp qua các button để gán sự kiện
-    for (i = 0; i < acc.length; i++) {
-        acc[i].onclick = function(){
-            /* Thêm/xóa class active để đánh dấu các button đã được click */
-            this.classList.toggle("active");
-  
-            /* Hiển thị hoặc ẩn nội dung khi button được click */
-            var panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-                panel.style.display = "none";
-            } else {
-                panel.style.display = "block";
-            }
-        }
-    }
-  </script>
+    <div class="container__fluid padding">
+      <div class="row" id="ques_heal">
+        <div class="col-md-12 col-lg-3 col-xl-3">
+          <img
+            src="/img/team-walking_0.png"
+            height="450"
+            width="350"
+            id="imgFAQ"
+          />
+        </div>
+        <div class="col-md-12 col-lg-9 col-xl-9">
+          <div class="header_detail">
+            <div class="text__product">How do I donate?</div>
+          </div>
+          <div class="number_block">
+            <div class="number_block__wrapper">
+              <div class="number">1</div>
+              <div class="number_block__wrapper__content">
+                <p>
+                  Check your eligibility. Sometimes people have to wait before
+                  they can donate so it’s best to double check.
+                </p>
+              </div>
+            </div>
+            <div class="number_block__wrapper">
+              <div class="number">2</div>
+              <div class="number_block__wrapper__content">
+                <p>
+                  Find a donor centre. You can give life close to home, or near
+                  the office on your lunch break — it’s simple to find a centre
+                  that suits you.
+                </p>
+              </div>
+            </div>
+            <div class="number_block__wrapper">
+              <div class="number">3</div>
+              <div class="number_block__wrapper__content">
+                <p>
+                  Book a donation. Get ready to start calling yourself a
+                  ‘life-saver’! Find a time and day that works for you and book
+                  it in.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container__fluid padding" id="product__type">
+          <div class="row">
+            <div class="col-xl-12">
+              <div class="border_product">
+                <h1 class="text__product">
+                  What is the preparation process before and after blood
+                  donation?
+                </h1>
+              </div>
+            </div>
+          </div>
+          <section class="section-about">
+            <div class="container__fluid padding">
+              <div class="about-details">
+                <h3 class="heading-third">Prepare and after care</h3>
+              </div>
+            </div>
+          </section>
+
+          <section class="before__process">
+            <div class="container__fluid padding">
+              <h3 class="process__title">Before you donate</h3>
+              <div class="row" id="before__process">
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                  <div class="test">
+                    <div class="process__detail">
+                      <i class="fa-solid fa-martini-glass-citrus"></i
+                      ><strong>Hydrate and eat</strong>
+                    </div>
+                    <p class="para_product">
+                      One of the most important things you can do to look after
+                      your own health is to drink lots of fluids and have plenty
+                      to eat.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                  <div class="process__detail">
+                    <i class="fa-solid fa-clock-rotate-left"></i
+                    ><strong>The day before</strong>
+                  </div>
+                  <ul class="about-details-list">
+                    <li>
+                      Drink&nbsp;plenty of fluids — 10 glasses for men or 8
+                      glasses for women.&nbsp;
+                    </li>
+                    <li>
+                      Try to get a good night’s sleep.&nbsp;<br />
+                      &nbsp;
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                  <div class="process__detail">
+                    <i class="fa-solid fa-clock-rotate-left"></i
+                    ><strong> 3hrs before</strong>
+                  </div>
+                  <ul class="about-details-list">
+                    <li>
+                      Drink&nbsp;plenty of fluids — 10 glasses for men or 8
+                      glasses for women.&nbsp;
+                    </li>
+                    <li>
+                      Try to get a good night’s sleep.&nbsp;<br />
+                      &nbsp;
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div class="container__fluid padding" id="at__center">
+      <div class="parallax2"></div>
+      <section class="after__process">
+        <div class="container__fluid padding">
+          <h3 class="process__title">At the donor centre</h3>
+          <div class="row" id="before__process">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+              <div class="process__detail"><strong>Welcome</strong></div>
+              <p class="para_product">
+                When you walk in the door, you'll be greeted by our reception
+                staff member. They’ll check your valid ID. This is probably the
+                best time to speak up if you need your parking validated.
+              </p>
+              <p class="para_product">
+                Then, you’ll take a seat and fill out the confidential donor
+                questionnaire they give you. (If you'd like to see the
+                questionnaire in advance)
+              </p>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+              <div class="process__detail"><strong>Interview</strong></div>
+              <p class="para_product">
+                In a private room, a trained staff member will go over your
+                questionnaire answers with you and ask some questions to check
+                that you’re fine to donate.
+              </p>
+
+              <p class="para_product">
+                They’ll give you a quick ‘finger prick’ test to check your
+                haemoglobin (a protein which contains iron) and test your blood
+                pressure.
+              </p>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+              <div class="process__detail"><Strong>Donate</Strong></div>
+              <p class="para_product">
+                Sit back and relax on a comfy couch. You can read, chat with our
+                team or other donors, or just enjoy some quiet time.
+              </p>
+
+              <p class="para_product">
+                We’ll keep a close eye on you the whole time to make sure you’re
+                OK. Talk to a staff member if you feel uncomfortable or worried
+                at any point.
+              </p>
+              <p class="para_product">
+                Congratulations! Your donation is done. Now it's time to
+                celebrate.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="container__fluid padding" id="product__type">
+      <section class="after__process">
+        <div class="container__fluid padding">
+          <h3 class="process__title">After you donate</h3>
+          <div class="row" id="before__process">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+              <div class="process__detail">
+                <i class="fa-solid fa-clock-rotate-left"></i
+                ><Strong> Right after</Strong>
+              </div>
+              <p class="para_product">
+                It’s tempting to hurry over to the refreshments area to have
+                your pick of the snacks, but take your time before you get up.
+                It’s important that you rest for a few minutes in the donor
+                chair.
+              </p>
+              <p class="para_product">
+                When you’re ready, you can head over to the refreshments area to
+                relax for another 15 minutes. Find your favourite snack, have a
+                cool drink, maybe make a cup of tea, and enjoy.
+              </p>
+              <p class="para_product">
+                Make sure you grab a juice or water on your way out.
+              </p>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+              <div class="process__detail">
+                <i class="fa-solid fa-clock-rotate-left"></i
+                ><Strong>The day before</Strong>
+              </div>
+              <p class="para_product">
+                Drink plenty more fluids. Aim for another 3 good-sized glasses
+                in the first 3 hours.
+              </p>
+
+              <p class="para_product">
+                Take a seat when you can. Your body needs a bit of time to
+                recover, so try to avoid spending too much time on your feet.
+              </p>
+
+              <p class="para_product">
+                Try not to overheat. Some days it’s tricky, but do your best to
+                avoid hot showers, rushing around, standing in direct sun and
+                hot drinks.
+              </p>
+              <p class="para_product">Stay away from alcoholic drinks.</p>
+              <p class="para_product">
+                Eat regular meals — you’ll need your energy.
+              </p>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+              <div class="process__detail">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <Strong>3hrs before</Strong>
+              </div>
+              <p class="para_product">
+                Avoid strenuous exercise (like cycling, jogging or going to the
+                gym) or hazardous activities, including activities or jobs where
+                public safety may be affected. If you’re not sure whether that
+                applies to your job, check with your boss, donate outside of
+                work hours, or bring it up in your pre-donation interview.
+              </p>
+
+              <p class="para_product">
+                Most people feel great after they donate. In fact, you’re
+                probably feeling pretty good about yourself (as you should!),
+                but if you feel unwell at any point, please call us on 13 14 95.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="container padding pt-5" id="container__description">
+      <div class="row text-center padding">
+        <div class="col-md-12" id="text__after-header">
+          <h3 class="text__after-header--title">You ready to give blood</h3>
+          <br />
+          <a
+            href="/donor/appointment"
+            class="btn-primary text-white ml-0 xs:ml-4"
+            role="button"
+            >YES!!!!!</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
