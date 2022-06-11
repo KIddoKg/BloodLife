@@ -185,15 +185,14 @@ let Ordering = (req, res) => {
             console.log("update successfully");
           }
         });
-
-        res.render("orderBlood.ejs", {
-          hospitalName: hospitalName,
-          message: "Order Successful!",
-          orderBlood: [],
-          input_date: [],
-          exp_date: [],
-          layout: "./layouts/authentication",
-        });
+      });
+      res.render("orderBlood.ejs", {
+        hospitalName: hospitalName,
+        message: "Order Successful!",
+        orderBlood: [],
+        input_date: [],
+        exp_date: [],
+        layout: "./layouts/authentication",
       });
     }
   });
